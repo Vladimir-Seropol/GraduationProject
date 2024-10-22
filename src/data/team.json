@@ -1,0 +1,38 @@
+[
+	{
+			"id": 1,
+			"imgUrl": "https://bigpicture.ru/wp-content/uploads/2019/04/grandbeauty14.jpg",
+			"name": "Анастасия Золотарева",
+			"role": "Дизайнер"
+	},
+	{
+			"id": 2,
+			"imgUrl": "https://img.freepik.com/free-photofront-view-of-smiley-man-outdoors-in-the-city_23-2148955558.jpg",
+			"name": "Максим Золотарев",
+			"role": "Администратор"
+	},
+	{
+			"id": 3,
+			"imgUrl": "https://radiovera.ru/wp-content/uploads/2018/03/Andrey-Tarasov_.jpg",
+			"name": "Иван Ивлев",
+			"role": "Руководитель"
+	},
+	{
+			"id": 4,
+			"imgUrl": "https://static.mk.ru/upload/entities/2022/11/28/09/articles/detailPicture/56/c1/7d/87/45993c599b13a5f524f153c1d711b763.jpg",
+			"name": "Влад Кузнецов",
+			"role": "Директор"
+	},
+	{
+			"id": 5,
+			"imgUrl": "https://cdn-takefoto-ru.ams3.cdn.digitaloceanspaces.com/articles/articles/139/Lyudi_v_organizatsii_1.jpg",
+			"name": "Ксения Исаева",
+			"role": "Дизайнер"
+	},
+	{
+			"id": 6,
+			"imgUrl": "https://cdn.trinixy.ru/uploads/posts/2019-08/1565096647_2.jpg",
+			"name": "Екатерина Попова",
+			"role": "Менеджер"
+	}
+]

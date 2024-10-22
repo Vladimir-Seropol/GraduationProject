@@ -1,0 +1,43 @@
+.container {
+    min-height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .wrapper {
+    z-index: 30;
+    width: 97%;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 60px 40px;
+    background: rgba(73, 66, 131, 0.785);
+    border-radius: 0 0 10px 10px;
+    animation: visible 0.5s linear;
+     color: white;
+     text-align: center;
+     font-size: 20px;
+  }
+  
+  .wrapper nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    font-size: 20px;
+  }
+  .wrapper a {
+     color: white;
+  }
+  @keyframes visible {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,151 @@
+.wrapper{
+    max-width: 1920px;
+    max-height: 780px;
+    margin: 0 auto;
+}
+
+
+
+.container {
+    max-width: var(--max-width);
+    
+    margin: 60px auto;
+    height: 660px;
+    border-radius: 4px;
+    background: rgba(255, 244, 238, 1);
+    padding: 0 10px 40px 10px;
+    
+    
+}
+
+.info{
+    
+    height: 116px;
+    border-bottom: 1px solid rgba(68, 75, 88, 1);
+    padding: 40px 0 10px 100px;
+    margin-bottom: 20px;
+  
+}
+
+
+.title{
+    color: rgba(68, 75, 88, 1);
+margin-bottom: 20px;
+font-size: 30px;
+font-weight: 700;
+line-height: 30px;
+text-align: left;
+
+    
+}
+
+.description{
+    color: rgba(128, 128, 128, 1);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    
+    
+}
+
+.span{
+    color: rgba(68, 75, 88, 1);
+    padding: 20px 100px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: right;
+    
+}
+
+.selection{
+   
+    padding: 20px 100px 40px 100px;
+   border-bottom: 1px solid rgba(68, 75, 88, 1);
+   margin-bottom: 70px;
+}
+
+.selection textarea{
+    width: 465px;
+height: 246px;
+border-radius: 4px;
+padding: 20px;
+}
+ 
+.selection textarea::placeholder{
+color:  rgba(219, 187, 169, 1);
+}
+ 
+ 
+
+ .counter{
+font-family: var(--text-font);
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: left;
+color: rgba(128, 128, 128, 1);
+
+ }
+
+ .step{
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+ }
+
+ @media screen and (max-width: 1095px) {
+    .container{
+        margin: 30px 0 ;
+    }
+ }
+ @media screen and (max-width: 878px) {
+    .info{
+        padding: 40px 0 10px 50px;
+    }
+    .info p{
+        font-size: 12px;
+    }
+    .selection{
+        padding: 20px 40px;
+    }
+    .span{
+        padding: 0 0 0 50px;
+    }
+ }
+
+ @media screen and (max-width: 700px) {
+    .info h2{
+        font-size: 18px;
+        margin: 0;
+        
+    }
+    .span{
+        font-size: 18px;
+    }
+    .selection textarea{
+        width: 310px;
+   
+    }
+ }
+
+ @media screen and (max-width: 460px){
+
+    .info{
+        padding: 10px 0 10px 10px;
+    }
+    .info h2{
+        font-size: 14px;
+    }
+    .span{
+        font-size: 14px;
+        padding: 0 0 0 10px;
+    }
+    .selection{
+        padding: 20px 10px;
+    }
+ }

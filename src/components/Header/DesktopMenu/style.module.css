@@ -1,0 +1,26 @@
+
+
+
+.link {
+    font-size: 14px;
+    font-family: var(--text-font);
+	padding: 0.5rem;
+	margin-right: 0.2rem;
+	color: var(--text1);
+	background: transparent;
+	border: 0.1rem solid transparent;
+	border-radius: 3rem;
+	transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+ }
+ 
+ .link:hover {
+	border: 0.1rem solid var(--text1);
+	/* color: var(--head-color); */
+ }
+
+ @media screen and (max-width: 877px) {
+    nav {
+  display: none;    
+    }
+}

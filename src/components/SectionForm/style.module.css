@@ -1,0 +1,88 @@
+.wrapper{
+    padding: 60px 0;
+    max-width: 1920px;  
+    margin: 0 auto;  
+    
+}
+
+
+
+.container {
+    max-width: var(--max-width);
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+   padding: 0 10px;
+  }
+
+  .instagram{
+    max-width: 50%;
+  }
+  
+  .logo{
+    margin: 0 auto;
+    width: 30%;
+  }
+
+  .foto{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 3fr);
+  }
+
+
+  .foto img:nth-child(2) {
+    grid-column: 2 / span 2; /* Занимает первые две колонки */
+    grid-row: 1 / span 2; 
+  }
+
+
+
+@media screen and (max-width: 878px) {
+
+    .foto{
+        gap: 10px;
+    }
+  
+    .container{
+        justify-content: center;
+    }
+ .foto{
+    grid-template-columns: repeat(2, 4fr);
+    /* justify-items: center; */
+ }
+ .foto img{
+   
+    margin-left: 10px;
+ }
+ .foto img:nth-child(2) {
+ display: none;
+  }
+
+   
+}
+
+@media screen and (max-width: 735px) {
+    .container{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .instagram{
+        max-width: 100%;
+      }
+    .foto{
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(4, 3fr);
+      }
+    
+    
+      .foto img:nth-child(2) {
+        display: block;
+        grid-column: 2 / span 2; 
+        grid-row: 1 / span 2; 
+      }
+}
+

@@ -1,0 +1,28 @@
+.container {
+    /* height: 1190px; */
+    padding: 60px 10px;
+   
+}
+
+.container h1 {
+font-size: 30px;
+font-weight: 700;
+line-height: 30px;
+/* text-align: center; */
+
+}
+
+.cardsTeam{
+    padding-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.absolute {
+    width: 25%;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: 1;
+}
+

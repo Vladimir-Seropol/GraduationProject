@@ -1,0 +1,140 @@
+.wrapper{
+    max-width: 1920px;
+    padding: 60px 0;
+    margin: 0 auto;
+    background-color: rgba(243, 246, 246, 1);
+    border-top: 1px solid rgba(243, 246, 246, 1);
+    border-bottom: 1px solid rgba(243, 246, 246, 1);
+}
+
+
+
+.container {
+    position: relative;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 10px;
+   
+  }
+  
+  .container h2 {
+    color: var(--text);
+  }
+
+  .container h3{
+    font-family: var(--text-font);
+   text-transform: uppercase;
+font-size: 14px;
+font-weight: 400;
+line-height: 19.6px;
+letter-spacing: 0.08em;
+color: rgba(178, 181, 187, 1);
+cursor: pointer;
+  } 
+
+  .contacts{
+    display: flex;
+    margin: 0 auto;
+    /* height: 618px; */
+    gap: 130px;
+  }
+
+  .contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 500px;
+    height: 437px;
+    margin-top: 60px;
+  }
+
+.contact h3:hover + .tooltip{
+    display: block;
+  }
+
+  .contact p{
+font-size: 18px;
+font-weight: 400;
+line-height: 25.2px;
+text-align: left;
+color: var(--text);
+  }
+
+.contact a{
+    font-family: var(--title-font);
+font-size: 30px;
+font-weight: 400;
+line-height: 42px;
+color: var(--text);
+}
+
+.social_media img{
+    width: 44px;
+    margin-right: 20px;
+}
+
+  .tooltip{
+    position: absolute;
+    top: 0;
+    left:10%;
+    z-index: 10;
+    display: none;
+  }
+
+  .map{
+    width: 600px;
+    
+  }
+
+  @media screen and (max-width: 1000px) {
+    .contacts {
+        gap: 50px;
+        justify-content: space-evenly;
+       /* flex-direction: column; */
+    }
+
+    .map{
+        width: 50%;
+        height: 100%;
+        
+      }
+    .container h3{
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0.08em;
+   
+      } 
+
+      .contact p{
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 20px;
+    
+          }
+        
+        .contact a{
+            
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 38px;
+       
+        }
+    
+}
+
+@media screen and (max-width: 735px){
+    .contacts{
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
+    .contact{
+        justify-content: flex-start;
+        height: 100%;
+        align-items: center;
+    }
+    .map{
+        width: 100%; 
+    }
+}

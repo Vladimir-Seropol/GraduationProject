@@ -1,0 +1,25 @@
+.container{
+	max-width: 1180px;
+    margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 20px;
+
+}
+
+button{
+    grid-column: 2; 
+display: flex;
+justify-content: center; 
+margin-top: 20px;
+}
+
+@media screen and (max-width: 825px) {
+    .container {
+      display: block;
+        width: 100;
+      gap: 20px 0;
+      justify-items: center;
+    }
+}

@@ -1,0 +1,38 @@
+.logo{
+	width: auto;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+
+.logo img{
+	transition: transform .3s ease;
+	width: 5rem;
+}
+
+
+@keyframes favicon-shake {
+0%, 100% {
+	transform: rotate(0);
+}
+25% {
+	transform: rotate(5deg);
+}
+50% {
+	transform: rotate(-5deg);
+}
+75% {
+	transform: rotate(5deg);
+}
+}
+
+.logo span:hover{
+	animation: favicon-shake .4s ease 1 alternate;
+}
+
+/* .logo span{
+	font-family: "Lobster";
+	font-size: 20px;
+	color: red;
+} */

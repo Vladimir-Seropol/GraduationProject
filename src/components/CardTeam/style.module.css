@@ -1,0 +1,26 @@
+
+
+.card{
+	 height: 480px;
+	padding: 30px 20px;
+	margin-bottom: 50px;
+
+}
+
+.info h2,
+.info p{
+    margin: 0 30px;
+}
+
+.card img{
+    margin-bottom: 20px;
+    max-height: 400px;
+}
+
+.info{
+    height: 80px;
+}
+.info p{
+    margin-top: 20px;
+}
+

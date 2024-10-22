@@ -1,0 +1,18 @@
+.wrapper{
+    padding: 60px 0;
+   max-width: 1920px;
+   margin: 0 auto;
+   padding: 60px 10px;
+
+}
+.container {
+    max-width: var(--max-width);
+    
+    margin: 0 auto;
+  }
+  
+  .container h2 {
+    color: var(--text);
+  }
+
+

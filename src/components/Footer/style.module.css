@@ -1,0 +1,29 @@
+.wrapper{
+    background: rgba(68, 75, 88, 1);
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.container {
+    max-width: var(--max-width);
+    padding: 18px 0;
+    margin: 0 auto;
+  }
+  
+  .nav{
+    max-width: var(--max-width);
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 auto; */
+     align-items: center;
+  }
+
+  @media screen and (max-width: 878px) {
+    .nav {
+  justify-content: space-evenly;    
+    }
+    
+  
+  
+    
+}

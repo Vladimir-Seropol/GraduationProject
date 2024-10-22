@@ -1,0 +1,153 @@
+.absolute{
+    width: 100%;
+    position: absolute;
+    top: 0;
+     backdrop-filter: blur(1px);
+    z-index: 2;
+}
+
+.item_wrapper{
+    max-width: 1180px;
+    height: 878px;
+    margin: 0 auto;
+    padding: 120px 0 62px 0;
+    
+}
+
+.container{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.background{
+    background: rgba(255, 255, 255, 1);
+    padding: 40px 0 60px 0;
+}
+
+.article{
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: left;
+   color: rgba(178, 181, 187, 1);
+ margin-right: 50px;
+ margin-bottom: 38px;
+}
+
+.title{
+font-size: 24px;
+font-weight: 400;
+line-height: 33.6px;
+text-align: left;
+color: rgba(68, 75, 88, 1);
+}
+
+.stars{
+    margin-bottom: 60px;
+}
+
+.size{
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: left;
+}
+
+.sizeOptions {
+    display: flex;
+    flex-wrap: wrap;
+gap: 23px; 
+margin-top: 4px; 
+margin-bottom: 60px;
+}
+
+.sizeButton {
+    margin-top: 0;
+padding: 10px 26px;
+border: 1px solid rgba(178, 181, 187, 1);
+border-radius: 4px;
+background-color:   var(--text1);
+cursor: pointer;
+}
+
+.sizeButton:hover {
+background-color: #f0f0f0; /* Цвет при наведении */
+}
+
+.selected {
+border-color: #ff0000; /* Цвет рамки для выбранного размера */
+background-color: #ffe6e6; /* Цвет фона для выбранного размера */
+}
+
+.price{
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-right: 23px;
+    color: rgba(68, 75, 88, 1);
+}
+
+.priceold{
+font-size: 16px;
+font-weight: 400;
+line-height: 16px;
+text-align: left;
+color: rgba(178, 181, 187, 1);
+}
+
+
+
+.button button{
+margin: 70px 0 21px 0;
+width: 100%;
+}
+
+.text{
+font-size: 14px;
+font-weight: 400;
+line-height: 14px;
+text-align: left;
+color: rgba(178, 181, 187, 1);
+
+}
+
+.item_wrapper img {
+    max-width:  45.5%;
+}
+.info h2,
+.info span,
+.info p{
+    color: var(--text);
+   
+}
+.description h3{
+font-size: 24px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+color: rgba(68, 75, 88, 1);
+margin-bottom: 24px;
+
+}
+
+.description p{
+    color: var(--text);
+    max-width: 538px;
+}
+
+.description{
+    display: flex;
+    gap: 100px;
+}
+
+.data p{
+    margin-bottom: 13px;
+}
+@media screen and (max-width: 1000px) {
+    .item_wrapper {
+      flex-direction: column;
+      gap: 20px 0;
+      justify-items: center;
+    }
+}

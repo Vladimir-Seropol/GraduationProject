@@ -1,0 +1,142 @@
+.container {
+    max-width: var(--max-width);
+    height: 528px;
+    margin: 0 auto;
+    padding: 20px 10px 100px 10px;
+    /* align-items: center; */
+    /* border-bottom: 1px solid var(--text1); */
+}
+
+.nav {
+    max-width: var(--max-width);
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    border-bottom: 1px solid var(--text1);
+    margin-bottom: 100px;
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text1);
+    font-family: var(--text-font);
+    width: 125px;
+    padding: 5px 20px 0 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    background: none;
+}
+
+.cart img{
+    width: 20%;
+}
+
+.SneakMax {
+    position: absolute;
+    font-family: var(--logo-font);
+    color: rgba(255, 255, 255, 0.12);
+    font-size: 200px;
+    font-weight: 700;
+    line-height: 200px;
+    /* text-align: left; */
+    left: 90px;
+    top: 80px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    max-width: 580px;
+    height: 364px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.info h1 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 50.4px;
+    text-align: left;
+}
+
+.info p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    text-align: left;
+}
+
+
+
+
+@keyframes favicon-shake {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+}
+.logo:hover {
+    animation: favicon-shake 0.4s ease 1 alternate;
+}
+
+@media screen and (max-width: 1095px) {
+    .SneakMax {
+   font-size: 180px;
+    font-weight: 700;
+    line-height: 200px;     
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .SneakMax {
+   font-size: 150px;
+    font-weight: 500;
+    line-height: 180px;     
+    }
+    
+}
+
+@media screen and (max-width: 878px) {
+    .nav {
+  justify-content: space-evenly;    
+    }
+    .SneakMax {
+        font-size: 125px;
+         font-weight: 500;
+         line-height: 180px;     
+         }
+    
+}
+
+@media screen and (max-width: 750px) {
+ 
+    .SneakMax {
+       display: none;    
+         }
+         .container{
+            padding: 10px 20px;
+         }
+         .nav{
+            margin-bottom: 10px;
+         }
+    
+}
+
+

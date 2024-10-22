@@ -1,0 +1,30 @@
+.container{
+    max-width: var(--max-width);
+margin: 0 auto;
+margin: 60px;
+padding: 0 10px;
+}
+
+
+.container h1 {
+    margin: 40px 0;
+    color: var(--text);
+   font-family: var(--logo-font);
+}
+
+.sneakers_block{
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    grid-template-columns: 25% auto;
+    gap: 20px;
+}
+
+@media screen and (max-width: 1265px) {
+    .sneakers_block {
+        grid-template-columns: 1fr;
+        gap: 150px;
+    }
+
+    
+}
