@@ -1,16 +1,8 @@
 import './App.css';
-//import Header from './components/Header';
-//import Card from './components/Card';
-//import allBeans from './data/beans.json';
-//import Cards from './components/Cards';
 import { RouterProvider } from 'react-router-dom';
 import router from './router';
 import { createContext, useState } from 'react';
-//import Counter from './components/Counter';
-//import Example from './components/Example';
-//import Example_1 from './components/Example';
-//import Title from './components/Title';
-//import Buttons from './components/Buttons';
+
 
 
 type ContextType = {

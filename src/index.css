@@ -1,125 +1,117 @@
-
-
 @font-face {
-	font-family: IntroBold;
-	src: url("./fons/Intro-Bold-Alt.ttf");
-} 
-
-
-@font-face {
-	font-family: IntroBook;
-	src: url("./fons/Intro-Book.ttf");
+    font-family: IntroBold;
+    src: url("./fons/Intro-Bold-Alt.ttf");
 }
 
-
 @font-face {
-	font-family: IntroRegular;
-	src: url("./fons/Intro-Regular.ttf");
+    font-family: IntroBook;
+    src: url("./fons/Intro-Book.ttf");
 }
 
-
+@font-face {
+    font-family: IntroRegular;
+    src: url("./fons/Intro-Regular.ttf");
+}
 
 :root {
-	--bg: rgba(72, 66, 131, 1);
+    --bg: rgba(72, 66, 131, 1);
     --accent: rgba(241, 79, 79, 1);
     --text: rgba(68, 75, 88, 1);
     --text1: rgba(255, 255, 255, 1);
     --small-text: rgba(219, 187, 169, 1);
     --small-text1: rgba(255, 244, 238, 1);
-    --small-text2:rgba(178, 181, 187, 1);
-   
+    --small-text2: rgba(178, 181, 187, 1);
 
+    --max-width: 1180px;
+    --logo-font: "IntroBold", sans-serif;
+    --text-font: "IntroBook", sans-serif;
+    --title-font: "IntroRegular", sans-serif;
+}
 
-	--max-width: 1180px;
-	--logo-font: "IntroBold", sans-serif;
-	--text-font: "IntroBook", sans-serif;
-	--title-font: "IntroRegular", sans-serif;
- }
-
-img{
+img {
     width: 100%;
 }
 
-a{
- color: var(--text1);
- font-family: var(--text-font);
- text-decoration: none;
+a {
+    color: var(--text1);
+    font-family: var(--text-font);
+    text-decoration: none;
 }
-ul,  a{
-padding: 0.5rem;
-margin-right: 0.2rem;
-color: var(--text1);
-background: transparent;
-border: 0.1rem solid transparent;
-border-radius: 3rem;
-transition: background 0.3s ease, color 0.3s ease;
+ul,
+a {
+    padding: 0.5rem;
+    margin-right: 0.2rem;
+    color: var(--text1);
+    background: transparent;
+    border: 0.1rem solid transparent;
+    border-radius: 3rem;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-li{
+li {
     list-style-type: none;
 }
-.wrapper{
+.wrapper {
     background-color: var(--bg);
     max-width: 1920px;
     position: relative;
     margin: 0 auto;
-    /* margin-right: 0; */
 }
 
-.container{
-	max-width: var(--max-width);
-	margin: 0 auto;
-	/* padding: 0 16px; */
-	/* transition: all .5s ease; */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
 }
 
-h1, h2, h4{
+h1,
+h2,
+h4 {
     font-family: var(--title-font);
     color: var(--text1);
 }
 
-h4{
+h4 {
     color: var(--text);
 }
 
-p{
+p {
     font-family: var(--text-font);
     color: var(--text1);
 }
 
-span{
+span {
     font-family: var(--logo-font);
     color: var(--text1);
 }
 
-label{
+label {
     color: var(--text);
 }
-button{
+button {
     border: none;
 }
 
-.map{
+.map {
     max-width: 680px;
-     height:497px; 
+    height: 497px;
 }
 
-
-.dark, 
-.light{
-	padding: 0.5rem;
+.dark,
+.light {
+    padding: 0.5rem;
     margin-right: 0.2rem;
     color: var(--text1);
     background: transparent;
     border: 0.1rem solid transparent;
     /* border-radius: 3rem; */
-    transition: background 0.3s ease, color 0.3s ease;
-    
-}  
-.dark{
-	background-color: rgb(106, 101, 101);
-    
-
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+.dark {
+    background-color: rgb(106, 101, 101);
 }
 
 .dark h2,
@@ -129,11 +121,10 @@ button{
 .dark a,
 .dark span,
 .dark button,
-.dark label{
+.dark label {
     color: white;
 }
 
-.dark .button_dark{
+.dark .button_dark {
     background-color: var(--bg);
 }
-

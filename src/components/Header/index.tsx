@@ -46,7 +46,7 @@ const Header: FC<IProps> = ({ isOpen, setIsOpen, setIsBasketOpen }) => {
           <div onClick={() => setIsOpen()}>
       <button onClick={() => setIsBasketOpen()} className={style.cart}>
         Корзина <img src="src/images/basket.svg" alt="корзина" />
-        <span>{basketLength}</span>
+        <span className={style.counter}>{basketLength}</span>
       </button>
     </div>
           {/* <Link className={style.cart} to={`/cart`}>Корзина <span>{basketLength}</span></Link> */}
