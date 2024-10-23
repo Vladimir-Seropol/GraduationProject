@@ -4,7 +4,7 @@ import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
 import SneakerPage from "./pages/Sneaker";
-import BasketList from "./pages/CartPage/BasketList";
+import Basket from "./pages/CartPage/Basket";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -12,15 +12,8 @@ const router = createBrowserRouter([
 		loader: Loader,
 		children: [
 			{ path: "/", element: <Home /> },
-			// {path: "#catalog",element: <SectionSneakers />},
 			{ path: "sneaker/:id", element: <SneakerPage /> },
-			// { path: "#about_us", element: <SectionAbout /> },
-			// {path: "#selection",element: <SectionSelection />},
-			// {path: "#team",element: <SectionTeams />},
-			// {path: "#payment",element: <SectionForm />},     
-			// {path: "#contacts",element: <SectionContacts />},
-			// {path: "#review",element: <Review />},
-			{ path: "basket", element: <BasketList /> },
+			{ path: "basket", element: <Basket  /> },
 			{ path: "*", element: <NotFound /> }
 		]
 	}

@@ -16,6 +16,12 @@ const SectionSelection = () => {
     }
   };
 
+  const handleButtonClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideTo(0); // Возвращаемся к первому слайду
+    }
+  };
+
   return (
     <section className={style.wrapper} id="selection">
       <Swiper ref={swiperRef} className="my-swiper">
@@ -29,7 +35,7 @@ const SectionSelection = () => {
           <Selection3 onNext={handleNextSlide} />
         </SwiperSlide>
         <SwiperSlide>
-          <Selection4 />
+          <Selection4 onButtonClick={handleButtonClick} />
         </SwiperSlide>
       </Swiper>
     </section>

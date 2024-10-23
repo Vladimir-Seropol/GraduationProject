@@ -32,6 +32,10 @@ img {
     width: 100%;
 }
 
+input {
+    border: none;
+  }
+
 a {
     color: var(--text1);
     font-family: var(--text-font);

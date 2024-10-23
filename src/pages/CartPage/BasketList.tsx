@@ -13,12 +13,14 @@ interface IProps {
 const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {
   // Получаем данные из Redux store
   const items = useSelector<RootState, ISneakers[]>((state) => state.basket.data);
-
+  console.log(items);
+   
 
     return (
         <BasketListStyle $page={page} $isBasketOpen={isBasketOpen}>
           {items.map((item) => (
             <BasketCard key={item.id} isPage={page} item={item} />
+            
           ))}
         </BasketListStyle>
       );
@@ -28,6 +30,7 @@ const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {
 
 
 const BasketListStyle = styled.ul<{ $page?: boolean; $isBasketOpen?: boolean }>`
+
   ${(props) => !props.$page && "padding: 0 20px;"}
   max-height: ${(props) => (props.$page ? "260px" : "min(414px, 50vh)")};
   overflow: auto;

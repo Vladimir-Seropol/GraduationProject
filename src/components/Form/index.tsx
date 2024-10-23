@@ -2,33 +2,65 @@ import React, { useState } from "react";
 import ButtonRed from "../Buttons/ButtonRed/button";
 import style from "./style.module.css";
 
-// interface InputProps {
-//     type: string; 
-//     placeholder: string; 
-//   }
-  
-
 interface ButtonProps {
-    text: string;
-    title: string;
+  text: string;
+  title: string;
   phoneInputProps: React.InputHTMLAttributes<HTMLInputElement>;
-    style?: React.CSSProperties;
-    backgroundColor?: string;
-  }
+  
+  input: {
+    border: string;
+    backgroundColor: string;
+  };
+  backgroundColor?: string;
+  showNameField?: boolean;
+  buttonText?: string; // Новое свойство для текста кнопки
+  buttonStyle?: React.CSSProperties; // Новое свойство для стиля кнопки
+  onButtonClick: () => void; // Новый обработчик события для кнопки
+}
 
-
-const ContactForm: React.FC<ButtonProps> = ({ text, title, phoneInputProps, backgroundColor }) => {
+const ContactForm: React.FC<ButtonProps> = ({
+  text,
+  title,
+  phoneInputProps,
+  backgroundColor,
+  showNameField = false,
+  buttonText = "Отправить", // Значение по умолчанию
+  buttonStyle, 
+  onButtonClick, // Обработчик события кнопки
+}) => {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Здесь можно добавить логику для обработки отправленных данных
+
+    // Пример простой валидации
+  if (!name || !phone || !email) {
+    alert("Пожалуйста, заполните все поля.");
+    return;
+  }
+
+  // Проверка формата email
+  const emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Введите корректный email.");
+    return;
+  }
+
+
+
     console.log("Имя:", name);
     console.log("Телефон:", phone);
+    console.log("Email:", email);
 
     setName("");
     setPhone("");
+    setEmail("");
+
+    if (onButtonClick) {
+      onButtonClick(); // Вызов обработчика, если он предоставлен
+    }
   };
 
   return (
@@ -38,8 +70,7 @@ const ContactForm: React.FC<ButtonProps> = ({ text, title, phoneInputProps, back
         <p>{text}</p>
         <div>
           <label>
-            
-            <input
+            <input      
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -50,7 +81,6 @@ const ContactForm: React.FC<ButtonProps> = ({ text, title, phoneInputProps, back
         </div>
         <div>
           <label>
-           
             <input
               type={phoneInputProps.type}
               value={phone}
@@ -60,7 +90,20 @@ const ContactForm: React.FC<ButtonProps> = ({ text, title, phoneInputProps, back
             />
           </label>
         </div>
-        <ButtonRed text="Отправить" onClick={() => {}} />
+        {showNameField && (
+          <div>
+            <label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-mail"
+                required
+              />
+            </label>
+          </div>
+        )}
+        <ButtonRed text={buttonText} style={buttonStyle} onClick={onButtonClick} />
       </div>
     </form>
   );
