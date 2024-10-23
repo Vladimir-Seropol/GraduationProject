@@ -40,7 +40,7 @@ const Header: FC<IProps> = ({ isOpen, setIsOpen, setIsBasketOpen }) => {
         <div className={style.nav}>
          
             <Logo />
-         
+            
           {isMobile ? <MobileMenu /> : <DesktopMenu />}
 
           <div onClick={() => setIsOpen()}>

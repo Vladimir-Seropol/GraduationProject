@@ -53,6 +53,15 @@
     /* margin-top: 10px; */
 }
 
+.successMessage{
+    color: rgba(72, 66, 131, 1);
+    position: absolute;
+    top: -50px;
+    left: -110px;
+    font-size: 18px;
+   
+    text-align: center;
+}
 
 @media screen and (max-width: 825px) {
     .card {

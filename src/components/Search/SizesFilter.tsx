@@ -13,7 +13,7 @@ const SizesFilter: FC<IProps> = ({ setValue }) => {
   const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
 
   const handleSizeChange = (size: number) => {
-    console.log(selectedSizes);
+    
     setSelectedSizes((prevSelectedSizes) => {
       const newSizes = prevSelectedSizes.includes(size)
         ? prevSelectedSizes.filter((s) => s !== size)
