@@ -4,7 +4,7 @@ import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
 import SneakerPage from "./pages/Sneaker";
-import CartPage from "./pages/CartPage/BasketList";
+import BasketList from "./pages/CartPage/BasketList";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
 			// {path: "#payment",element: <SectionForm />},     
 			// {path: "#contacts",element: <SectionContacts />},
 			// {path: "#review",element: <Review />},
-			{ path: "cart", element: <CartPage  /> },
+			{ path: "basket", element: <BasketList /> },
 			{ path: "*", element: <NotFound /> }
 		]
 	}
