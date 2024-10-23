@@ -1,3 +1,4 @@
+import React from 'react';
 import style from "./style.module.css";
 
 interface ButtonProps {
@@ -5,15 +6,14 @@ interface ButtonProps {
     onClick: () => void;
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
-  }
+}
 
-const ButtonRed : React.FC<ButtonProps> = ({ text, onClick }) => {
-
-	return(
-		<button className={style.button} onClick={onClick}>
-			{text}
-		</button>
-	)
+const ButtonRed: React.FC<ButtonProps> = ({ text, onClick, disabled = false, type = "button" }) => {
+    return (
+        <button className={style.button} onClick={onClick} disabled={disabled} type={type}>
+            {text}
+        </button>
+    );
 }
 
 export default ButtonRed;

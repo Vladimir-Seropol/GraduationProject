@@ -1,31 +1,37 @@
 import { FC } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BasketList from "./BasketList";
+import ButtonRed from "../../components/Buttons/ButtonRed/button.tsx";
 
 interface IProps {
   setIsBasketOpen: () => void;
 }
 
 const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
+  const navigate = useNavigate(); // Используем useNavigate
+
+  const handleGoToBasket = () => {
+    setIsBasketOpen(); // Закрываем корзину
+    navigate("/basket"); // Переходим на страницу корзины
+  };
+
   return (
     <BasketBlockStyle>
       <div className="container">
-        <div className="back" onClick={() => setIsBasketOpen()}></div>
+        <div className="back" onClick={setIsBasketOpen}></div>
         <div className="basket">
           <BasketList isBasketOpen />
           <InfoStyle>
-            <Link to="/cart">
-              <BtnStyle type="button" onClick={setIsBasketOpen} >
-                Перейти в корзину
-              </BtnStyle>
-            </Link>
+            <ButtonRed type="button" onClick={handleGoToBasket} text={"Перейти в корзину"} />
           </InfoStyle>
         </div>
       </div>
     </BasketBlockStyle>
   );
 };
+
+
 
 const BasketBlockStyle = styled.div`
   .back {

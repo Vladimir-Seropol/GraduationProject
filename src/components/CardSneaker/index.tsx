@@ -13,51 +13,59 @@ type Props = {
 };
 
 const CardSneaker: FC<Props> = ({ item, data }) => {
-    const dispatch = useDispatch<AppDispatch>();
-    const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-    const [isAdded, setIsAdded] = useState<boolean>(false); // Состояние для отслеживания добавления в корзину
+  const dispatch = useDispatch<AppDispatch>();
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [isAdded, setIsAdded] = useState<boolean>(false); // Состояние для отслеживания добавления в корзину
 
-    const handleAddToBasket = () => {
-        dispatch(postBasket(item));
-        setIsAdded(true);
-        setTimeout(() => setIsAdded(false), 2000); // Скрыть сообщение через 2 секунды
-    };
+  const handleAddToBasket = () => {
+    dispatch(postBasket(item));
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000); // Скрыть сообщение через 2 секунды
+  };
 
-    return (
-        <CatalogCardStyle
-            $isOpenModal={isOpenModal}
-            onClick={() => setIsOpenModal((prev) => !prev)}
-        >
-            <div className={style.card}>
-                <div className={style.product_block}>
-                    <img src={data.imgUrl} alt="" />
-                    <h2>{data.title}</h2>
-                    <p>{data.price} p</p>
-                    <div className={style.add_block}>
-                        <Link to={`/sneaker/${data.id}`}>
-                            <img src="src/assets/View_product.png" alt="" />
-                        </Link> 
-                        
-                        <div className={isOpenModal ? "modal modal-open" : "modal"}>
-                            <button className="add" onClick={handleAddToBasket}>
-                                <img src="src/assets/Add_cart.png" alt="add to basket" />
-                            </button>
-                            {isAdded && <span className={style.successMessage}>Товар добавлен в корзину!</span>}
-                        </div>
-                    </div>
-                </div>
+  return (
+    <CatalogCardStyle
+      $isOpenModal={isOpenModal}
+      onClick={() => setIsOpenModal((prev) => !prev)}
+    >
+      <div className={style.card}>
+        <div className={style.product_block}>
+          <img src={data.imgUrl} alt="" />
+          <h2>{data.title}</h2>
+          <p>{data.price} p</p>
+          <div className={style.add_block}>
+            <Link to={`/sneaker/${data.id}`}>
+              <img src="src/assets/View_product.png" alt="" />
+            </Link>
+
+            <div className={isOpenModal ? "modal modal-open" : "modal"}>
+              {/* <div className="options"> */}
+                <button className="add" onClick={handleAddToBasket}>
+                  <img src="src/assets/Add_cart.png" alt="add to basket" />
+                </button>
+              {/* </div> */}
+              {isAdded && (
+                <span className={style.successMessage}>
+                  Товар добавлен в корзину!
+                </span>
+              )}
+
+              {/* <picture>
+                <img src={item.imgUrl} alt={item.title} />
+              </picture> */}
             </div>
-        </CatalogCardStyle>
-    );
+          </div>
+        </div>
+      </div>
+    </CatalogCardStyle>
+  );
 };
-
-
 
 const CatalogCardStyle = styled.li<{ $isOpenModal: boolean }>`
   .modal {
     position: relative;
   }
- 
+
   .options {
     position: absolute;
     top: 0;

@@ -64,27 +64,36 @@
     transform: rotate(-45deg);
   }
 
-
-  @media screen and (max-width: 663px) {
+@media screen and (max-width: 878px) {
+    .container{
+        right: -350px;
+    }
+}
+  @media screen and (max-width: 728px) {
 .container{
-    right: -230px;
+    right: -300px;
 }
   }
 
-  @media screen and (max-width: 525px) {
+  @media screen and (max-width: 630px) {
     .container{
-        right: -200px;
+        right: -250px;
     }
       }
 
-      @media screen and (max-width: 470px) {
+      @media screen and (max-width: 524px) {
         .container{
-            right: -170px;
+            right: -230px;
         }
           }
 
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: 465px) {
             .container{
-                right: -150px;
+                right: -200px;
             }
+              }
+              @media screen and (max-width: 385px){
+                .container{
+                    right: -170px;
+                }
               }

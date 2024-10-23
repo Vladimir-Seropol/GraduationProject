@@ -14,17 +14,14 @@ const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {
   // Получаем данные из Redux store
   const items = useSelector<RootState, ISneakers[]>((state) => state.basket.data);
 
-  return (
-    <BasketListStyle $page={page} $isBasketOpen={isBasketOpen}>
-      {items.length > 0 ? (
-        items.map((item) => (
-          <BasketCard key={item.id} isPage={page} item={item} />
-        ))
-      ) : (
-        <p>Ваша корзина пуста</p>
-      )}
-    </BasketListStyle>
-  );
+
+    return (
+        <BasketListStyle $page={page} $isBasketOpen={isBasketOpen}>
+          {items.map((item) => (
+            <BasketCard key={item.id} isPage={page} item={item} />
+          ))}
+        </BasketListStyle>
+      );
 };
 
 

@@ -38,12 +38,14 @@ const Header: FC<IProps> = ({ isOpen, setIsOpen, setIsBasketOpen }) => {
         <div className={style.nav}>
           <Logo />
           {isMobile ? <MobileMenu /> : <DesktopMenu />}
-          <div onClick={() => setIsBasketOpen()}>
-            <button className={style.cart}>
+
+          <div onClick={() => setIsOpen()}>
+         
+            <button className={style.cart} onClick={() => setIsBasketOpen()} >
               Корзина <img src="src/images/basket.svg" alt="корзина" />
               <span className={style.counter}>{basketLength}</span>
             </button>
-          </div>
+         </div>
         </div>
 
         <div className={style.info}>
