@@ -11,18 +11,24 @@ interface IProps {
 }
 
 const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {
-  const items = useSelector<RootState, ISneakers[]>(
-    (state) => state.basket.data
-  );
+  // Получаем данные из Redux store
+  const items = useSelector<RootState, ISneakers[]>((state) => state.basket.data);
 
   return (
     <BasketListStyle $page={page} $isBasketOpen={isBasketOpen}>
-      {items.map((item) => (
-        <BasketCard key={item.id} isPage={page} item={item} />
-      ))}
+      {items.length > 0 ? (
+        items.map((item) => (
+          <BasketCard key={item.id} isPage={page} item={item} />
+        ))
+      ) : (
+        <p>Ваша корзина пуста</p>
+      )}
     </BasketListStyle>
   );
 };
+
+
+
 
 const BasketListStyle = styled.ul<{ $page?: boolean; $isBasketOpen?: boolean }>`
   ${(props) => !props.$page && "padding: 0 20px;"}

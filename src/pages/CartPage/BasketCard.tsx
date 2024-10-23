@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { delBasket, ISneakers } from "../../store/slices/basketSlice";
 import { AppDispatch } from "../../store/store";
 
-
 interface IProps {
   isPage?: boolean;
   item: ISneakers;
@@ -23,11 +22,13 @@ const BasketCard: FC<IProps> = ({ isPage, item }) => {
         <p className="price">{item.price} ₽</p>
       </div>
       <button onClick={() => dispatch(delBasket(item.id))}>
-        <img src="./icons/trash.svg" alt="trash" />
+        <img src="./icons/trash.svg" alt="Удалить" />
       </button>
     </BasketCardStyle>
   );
 };
+
+
 
 const BasketCardStyle = styled.li<{ $isPage: boolean | undefined }>`
   display: flex;

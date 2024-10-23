@@ -51,6 +51,7 @@ export const postBasket = createAsyncThunk<ISneakers, ISneakers>(
 
       return data; 
     } catch (error) {
+        console.error("Error posting to basket:", error);
       throw new Error("Failed to post basket"); 
     }
   }

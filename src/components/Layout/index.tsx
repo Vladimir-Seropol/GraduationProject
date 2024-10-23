@@ -11,11 +11,11 @@ const Layout = () => {
 
     return (
         <>
+           
+
             <Header isOpen={false} setIsOpen={function (): void {
                 throw new Error("Function not implemented.");
-            } } setIsBasketOpen={function (): void {
-                throw new Error("Function not implemented.");
-            } } />
+            } } setIsBasketOpen={function (): void {} } />
             
                 <main>
                     <Outlet />
