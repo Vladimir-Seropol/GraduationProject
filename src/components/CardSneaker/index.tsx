@@ -3,8 +3,6 @@ import style from "./style.module.css";
 import styled from "styled-components";
 import { Sneaker } from "../../types/sneaker";
 import { Link } from "react-router-dom";
-// import { delBasket } from "../../store/slices/basketSlice";
-// import { AsyncThunkAction, ThunkDispatch, UnknownAction } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { ISneakers, postBasket } from "../../store/slices/basketSlice";
 import { AppDispatch } from "../../store/store";
@@ -17,9 +15,7 @@ type Props = {
 const CardSneaker: FC<Props> = ({ item, data }) => {
     const dispatch = useDispatch<AppDispatch>();
     const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
-    // function dispatch(arg0: AsyncThunkAction<number, number, { state?: unknown; dispatch?: ThunkDispatch<unknown, unknown, UnknownAction>; extra?: unknown; rejectValue?: unknown; serializedErrorType?: unknown; pendingMeta?: unknown; fulfilledMeta?: unknown; rejectedMeta?: unknown; }>): void {
-    //     throw new Error("Function not implemented.");
-    // }
+ 
 
   return (
     <CatalogCardStyle
@@ -63,7 +59,7 @@ const CatalogCardStyle = styled.li<{ $isOpenModal: boolean }>`
   .modal {
     position: relative;
   }
-
+ 
   .options {
     position: absolute;
     top: 0;
@@ -78,7 +74,7 @@ const CatalogCardStyle = styled.li<{ $isOpenModal: boolean }>`
     opacity: 0;
     transition: all 200ms linear;
 
-    button {
+    .add button {
       width: 80px;
       height: 80px;
       background-color: var(--text);

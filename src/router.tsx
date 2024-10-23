@@ -4,16 +4,7 @@ import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 import Loader from "./components/Loader";
 import SneakerPage from "./pages/Sneaker";
-// import Cart from "./pages/CartPage";
-// import SectionAbout from "./components/SectionAbout";
-// import Review from "./pages/Review";
-// import SectionSneakers from "./components/SectionSneakers";
-// import SectionAbout from "./components/SectionAbout";
-// import SectionSelection from "./components/SectionSelection";
-// import SectionTeams from "./components/SectionTeam";
-// import SectionContacts from "./components/SectionContacts";
-// import SectionForm from "./components/SectionForm";
-
+import CartPage from "./pages/CartPage/BasketList";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -29,7 +20,7 @@ const router = createBrowserRouter([
 			// {path: "#payment",element: <SectionForm />},     
 			// {path: "#contacts",element: <SectionContacts />},
 			// {path: "#review",element: <Review />},
-			// { path: "cart", element: <Cart /> },
+			{ path: "cart", element: <CartPage  /> },
 			{ path: "*", element: <NotFound /> }
 		]
 	}

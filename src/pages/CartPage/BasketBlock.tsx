@@ -15,7 +15,7 @@ const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
         <div className="basket">
           <BasketList isBasketOpen />
           <InfoStyle>
-            <Link to="basket">
+            <Link to="/cart">
               <BtnStyle type="button" onClick={setIsBasketOpen} >
                 Перейти в корзину
               </BtnStyle>

@@ -2,7 +2,7 @@ import style from './style.module.css';
 import CardSneaker from '../CardSneaker';
 import { FC, useEffect, useState } from 'react';
 import { Sneaker } from '../../types/sneaker';
-import Button from '../Buttons/ButtonRed/button';
+import ButtonRed from '../Buttons/ButtonRed/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { ISneakers } from '../../store/types';
@@ -69,7 +69,7 @@ const CardsSneaker: FC<IProps> = ({ gender }) => {
         ))}
       
       {limit < sneakers.length && !isLoading && !isError && (
-        <Button 
+        <ButtonRed 
           text="Показать еще" 
           onClick={loadMore} 
           disabled={limit >= sneakers.length} 

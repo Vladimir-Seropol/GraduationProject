@@ -17,7 +17,7 @@ const PriceFilter: FC<IProps> = ({ register, setValue }) => {
       <div className="filter">
         <input type="number" min={1850} max={25768} {...register("startPrice")} />
         <input type="number" min={1850} max={25768} {...register("endPrice")} />
-        <Nouislider style={{ width: '240px' }} 
+        <Nouislider 
           range={{ min: 1850, max: 25768 }}
           start={[1850, 25768]}
           orientation="horizontal"

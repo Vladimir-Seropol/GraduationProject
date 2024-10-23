@@ -24,7 +24,7 @@ const Header: FC<IProps> = ({ isOpen, setIsOpen, setIsBasketOpen }) => {
   const handleClick = () => {
     // Переход на страницу Home
     navigate('/'); 
-
+  
     // Прокрутка к секции catalog после перехода
     setTimeout(() => {
       const element = document.getElementById('catalog');
@@ -45,6 +45,7 @@ const Header: FC<IProps> = ({ isOpen, setIsOpen, setIsBasketOpen }) => {
 
           <div onClick={() => setIsOpen()}>
       <button onClick={() => setIsBasketOpen()} className={style.cart}>
+        
         Корзина <img src="src/images/basket.svg" alt="корзина" />
         <span className={style.counter}>{basketLength}</span>
       </button>

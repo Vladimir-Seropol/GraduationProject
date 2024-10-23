@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, useContext, useRef } from "react";
 import PriceFilter from "./PriceFilter";
 import GenderFilter from "./GenderFilter";
 import SizesFilter from "./SizesFilter";
@@ -12,7 +12,6 @@ import style from "./style.module.css";
 import ButtonDark from "../Buttons/ButtonDark/button";
 import { ThemeContext } from "../../App";
 
-
 interface IProps {
   setGender: (gender: string) => void;
 }
@@ -25,18 +24,17 @@ export interface IFormData {
 }
 
 
-
 const CatalogFilter: FC<IProps> = ({ setGender }) => {
   const dispatch = useDispatch<AppDispatch>();
-  
   const { theme } = useContext(ThemeContext)!;
+ 
+
   const backgroundStyle =
     theme === "dark"
       ? { background: "none" }
       : { background: "rgba(255, 244, 238, 1)" };
 
-  const { register, handleSubmit, setValue } = useForm<IFormData>({
-    // Устанавливаем начальные значения для полей формы.
+  const { register, handleSubmit, setValue, reset } = useForm<IFormData>({
     defaultValues: {
       startPrice: 1850,
       endPrice: 25768,
@@ -47,39 +45,43 @@ const CatalogFilter: FC<IProps> = ({ setGender }) => {
 
   const onSubmit: SubmitHandler<IFormData> = (data) => {
     setGender(data.gender);
-    // Вызываем асинхронный экшен `fetchSneakers`, передавая ему объект с параметрами фильтрации:
-    dispatch(
-      fetchSneakers({
-          priceFrom: data.startPrice,
-          priceTo: data.endPrice,
-          gender: data.gender,
-          sizes: data.sizes,
-          isLoading: false,
-          isError: false,
-          data: []
-      })
-    );
+    dispatch(fetchSneakers({
+      priceFrom: data.startPrice,
+      priceTo: data.endPrice,
+      gender: data.gender,
+      sizes: data.sizes,
+      isLoading: false,
+      isError: false,
+      data: []
+    }));
+  };
+
+  const handleReset = () => {
+    reset(); // Сбрасываем значения формы до начальных
+    setGender(""); // Сбрасываем пол
+    dispatch(getBaseLimit()); // Вызываем сброс лимита
+   
   };
 
   return (
-    <form className={style.container} 
-    style={backgroundStyle}
+    <form 
+      className={style.container} 
+      style={backgroundStyle}
       onSubmit={handleSubmit(onSubmit)}
     >
-      
-        <h3 className={style.title}>Подбор по параметрам</h3>
+      <h3 className={style.title}>Подбор по параметрам</h3>
       
       <PriceFilter register={register} setValue={setValue} />
       <GenderFilter setValue={setValue} />
       <SizesFilter setValue={setValue} />
+      
       <div className={style.button_light}>
-      <ButtonDark text="Применить" onClick={() => dispatch(getBaseLimit())} />
-        <ButtonLight text="Сбросить" onClick={() => onSubmit({ startPrice: 1850, endPrice: 25768, gender: "", sizes: [0] })} />
-            </div>
+        <ButtonDark text="Применить" type="submit" onClick={() => dispatch(getBaseLimit())} />;
+              
+        <ButtonLight text="Сбросить" onClick={handleReset} type="button" />
+      </div>
     </form>
   );
 };
-
-
 
 export default CatalogFilter;

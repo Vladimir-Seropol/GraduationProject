@@ -1,21 +1,17 @@
 .card {
     position: relative;
    
-    /* height: 349px; */
-    /* min-height: 400px; */
     box-shadow: 0 0 10px gray;
     border-radius: 10px;
     padding: 30px 20px;
 }
 
 .product_block{
-    /* height: 293px; */
     margin: 0 auto;
 }
 
 .product_block img {
     margin: 0 auto;
-    /* width: 240px; */
     height: auto;
 }
 
@@ -26,8 +22,10 @@
 .add_block {
     position: absolute;
     top: 110px;
+    left: 0;
     display: flex;
-    align-items: center;
+    align-items:first baseline;
+    
     gap: 40px;
     opacity: 0;
     cursor: pointer;
@@ -52,7 +50,7 @@
 .product_block h2,
 .product_block p{
     color: var(--text);
-    margin-top: 10px;
+    /* margin-top: 10px; */
 }
 
 
