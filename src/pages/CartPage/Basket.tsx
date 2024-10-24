@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import BasketList from "./BasketList";
 import Form from "../../components/Form/index.tsx";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
 import { clearBasket, ISneakers } from "../../store/slices/basketSlice.ts";
@@ -14,11 +14,17 @@ interface IProps {
   item: ISneakers;
 }
 
-const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
+const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
   const [orderNumber, setOrderNumber] = useState<number | null>(null); // Состояние для хранения номера заказа
   const items = useState<any[]>([]); // Состояние для хранения списка товаров
   const navigate = useNavigate(); // Инициализируем useNavigate
   const dispatch = useDispatch(); // Инициализируем useDispatch
+  const [isOpen, setIsOpen] = useState(isBasketOpen);
+
+  const toggleBasket = () => {
+    setIsOpen(!isOpen);
+  };
+
 
 
 
@@ -54,10 +60,23 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
     (state) => state.basket.data.length
   );
 
+  const arrowStyle = {
+    position: 'relative',  
+    left: '8px', 
+    top: '4px',
+    width: '15px',
+    height: '15px',
+    transform: 'translateY(-50%)',
+    transition: 'transform 0.3s ease'
+  };
+  
+
   return (
     <BasketBlockStyle>
       <div className="container">
-        <div className="back" onClick={setIsBasketOpen}></div>
+        <Link to="/">
+        <div className="back"></div>
+        </Link>
         <div className="basket">
           <div className="design">
             <h5>Оформление заказа</h5>
@@ -69,10 +88,31 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
               <p>Товаров в корзине: {basketLengths}</p>
               <p>Общая сумма заказа: {calculateTotalPrice}₽</p>{" "}
               
-              <p>Состав заказа</p>
+             
             </div>
+            
+            <p onClick={toggleBasket} style={{ cursor: 'pointer', fontWeight: 'bold' }}>
+    Состав заказа 
+    <img 
+      src="src/assets/down-arrow.svg" 
+      alt={isOpen ? "Скрыть состав заказа" : "Показать состав заказа"} 
+      style={{ ...arrowStyle, transform: isOpen ? 'none' : 'rotate(180deg)' }} 
+    />
+  </p>
 
-            <BasketList items={items} isBasketOpen />
+      {isOpen && (
+        <ul >
+         
+              <li >
+                <BasketList items={items} isBasketOpen />
+              </li>
+           
+         
+         
+        </ul>
+      )}
+
+            
           </div>
 
           <InfoStyle>
@@ -83,7 +123,7 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
                 phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }}
                 backgroundColor="rgba(255, 255, 255, 1)"
                 input={{
-                  border: "",
+                  border: "rgba(246, 246, 246, 1)",
                   backgroundColor: "rgba(246, 246, 246, 1)",
                 }}
                 showNameField={true}
@@ -108,6 +148,8 @@ const BasketBlockStyle = styled.div`
     background: rgba(68, 75, 88, 0.7);
     z-index: 4;
   }
+
+
   h5 {
     font-family: Intro Bold;
     font-size: 20px;
@@ -115,6 +157,7 @@ const BasketBlockStyle = styled.div`
     line-height: 20px;
     text-align: left;
     color: rgba(68, 75, 88, 1);
+   
   }
   .design {
     display: flex;
@@ -133,7 +176,6 @@ const BasketBlockStyle = styled.div`
     font-weight: 400;
     line-height: 14px;
     color: rgba(178, 181, 187, 1);
-    pading: 30px 30px;
   }
   .sneaker {
     max-width: 500px;
@@ -142,7 +184,7 @@ const BasketBlockStyle = styled.div`
   }
   .container {
     max-width: 580px;
-    // position: fixed;
+    
     top: 60px;
     bottom: 0;
     right: 0;
@@ -154,18 +196,17 @@ const BasketBlockStyle = styled.div`
     position: relative;
     z-index: 5;
     top: -55vh;
-    // box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
+    
     background: rgba(255, 255, 255, 1);
     min-width: 580px;
-    max-height: 100vh;
+    // max-height: 100vh;
   }
 `;
 
 const InfoStyle = styled.div`
-  //   padding: 20px 20px;
-  // box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
   max-width: 580px;
   background: rgba(255, 255, 255, 1);
+
 
   .form {
     max-width: 500px;
@@ -188,11 +229,6 @@ const InfoStyle = styled.div`
 `;
 
 export default Basket;
-function dispatch(arg0: any) {
-    throw new Error("Function not implemented.");
-}
 
-// function clearBasket(): any {
-//     throw new Error("Function not implemented.");
-// }
+
 

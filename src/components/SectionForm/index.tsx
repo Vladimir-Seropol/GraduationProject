@@ -5,8 +5,12 @@ const SectionForm = () => {
   return (
     <section className={style.wrapper} id="payment">
       <div className={style.container}>
-       <ContactForm title="Есть вопросы?" text="Заполните форму и наш менеджер свяжется с вами"  phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }}
- />
+       <ContactForm title="Есть вопросы?" text="Заполните форму и наш менеджер свяжется с вами" phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }} input={{
+                  border: "",
+                  backgroundColor: ""
+              }} onButtonClick={function (): void {
+                  throw new Error("Function not implemented.");
+              } } />
 
            <div className={style.instagram}>
             <div className={style.logo}>

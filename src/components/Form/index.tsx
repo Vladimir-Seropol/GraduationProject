@@ -6,7 +6,6 @@ interface ButtonProps {
   text: string;
   title: string;
   phoneInputProps: React.InputHTMLAttributes<HTMLInputElement>;
-  
   input: {
     border: string;
     backgroundColor: string;
@@ -26,7 +25,8 @@ const ContactForm: React.FC<ButtonProps> = ({
   showNameField = false,
   buttonText = "Отправить", // Значение по умолчанию
   buttonStyle, 
-  onButtonClick, // Обработчик события кнопки
+  onButtonClick,
+  input  // Обработчик события кнопки
 }) => {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -75,6 +75,10 @@ const ContactForm: React.FC<ButtonProps> = ({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Ваше имя"
+              style={{
+                border: input.border,
+                backgroundColor: input.backgroundColor,
+              }}
               required
             />
           </label>
@@ -86,6 +90,10 @@ const ContactForm: React.FC<ButtonProps> = ({
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder={phoneInputProps.placeholder}
+              style={{
+                border: input.border,
+                backgroundColor: input.backgroundColor,
+              }}
               required
             />
           </label>
@@ -98,6 +106,10 @@ const ContactForm: React.FC<ButtonProps> = ({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail"
+                style={{
+                    border: input.border,
+                    backgroundColor: input.backgroundColor,
+                  }}    
                 required
               />
             </label>
