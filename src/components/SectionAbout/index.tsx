@@ -1,17 +1,14 @@
-// import { useState } from "react";
-// import Cards from "../Cards";
-// import Search from "../Search";
+
 import style from "./style.module.css";
-// import CardsSneaker from "../CardsSneaker";
-//import theme from "../../components/SwitchTheme";
+
 
 const SectionAbout = () => {
-  //   const [filterValue, setFilterValue] = useState("");
+  
   return (
     <section id="about_us">
       <div className="wrapper">
         <div className={style.imeges}>
-          <img src="src/images/figure.png" alt="" />
+          <img src="src/images/figure.png" alt="Figure" />
         </div>
 
         <div className={style.container}>
@@ -23,12 +20,12 @@ const SectionAbout = () => {
               историй спортсменов. Чтобы помочь тебе подняться и двигаться вперед.{" "}
             </p>
             <span className={style.span}>
-              <img src="src/images/Line_6.png" alt="" />
+              <img src="src/images/Line_6.png" alt="Line" />
               SneakMax
             </span>
           </div>
 
-          <img src="src/images/Mask_Group.png" alt="" />
+          <img src="src/images/Mask_Group.png" alt="Sneakers on feet" />
         </div>
       </div>
     </section>

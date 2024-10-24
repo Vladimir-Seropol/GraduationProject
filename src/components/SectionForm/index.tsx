@@ -13,11 +13,11 @@ const SectionForm = () => {
                 <img src="src/images/instagram_logo.png" alt="" />
             </div>
             <div className={style.foto}>
-                <img src="src/images/Rectangle_1.png" alt="" />
-                <img src="src/images/Rectangle_3.png" alt="" />
-                <img src="src/images/Rectangle_4.png" alt="" />
-                <img src="src/images/Rectangle_2.png" alt="" />
-                <img src="src/images/Rectangle_5.png" alt="" />
+                <img src="src/images/Rectangle_1.png" alt="picture from Instagram" />
+                <img src="src/images/Rectangle_3.png" alt="picture from Instagram" />
+                <img src="src/images/Rectangle_4.png" alt="picture from Instagram" />
+                <img src="src/images/Rectangle_2.png" alt="picture from Instagram" />
+                <img src="src/images/Rectangle_5.png" alt="picture from Instagram" />
 
             </div>
             

@@ -3,54 +3,51 @@ import styled from "styled-components";
 import BasketList from "./BasketList";
 import Form from "../../components/Form/index.tsx";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store.ts";
+import { delBasket, ISneakers } from "../../store/slices/basketSlice.ts";
 
 interface IProps {
   setIsBasketOpen: () => void;
-//   setOrderNumber:() => void;
+  item: ISneakers;
 }
 
 const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
-   
-    const [orderNumber, setOrderNumber] = useState<number | null>(null); // Состояние для хранения номера заказа
-    const [items, setItems] = useState<any[]>([]); // Состояние для хранения списка товаров
-    const navigate = useNavigate(); // Инициализируем useNavigate
+  const [orderNumber, setOrderNumber] = useState<number | null>(null); // Состояние для хранения номера заказа
+  const items = useState<any[]>([]); // Состояние для хранения списка товаров
+  const navigate = useNavigate(); // Инициализируем useNavigate
 
-
-        // Функция для генерации случайного номера заказа
-        const generateOrderNumber = () => {
-          return Math.floor(100000 + Math.random() * 900000);
-        };
-        
-        // Генерация номера заказа при монтировании компонента
-        useEffect(() => {
-          const newOrderNumber = generateOrderNumber();
-          setOrderNumber(newOrderNumber);
-          console.log("Номер заказа сгенерирован:", newOrderNumber);
-
-            
-    // Добавление товаров в заказ
-    setItems([{ id: {}, name: {}, price: {} }]);
-}, []);// Пустой массив зависимостей, чтобы выполнить только один раз
-
-        // Функция для вычисления общей суммы заказа
-  const calculateTotalPrice = () => {
-    return items.reduce((total, item) => total + item.price, 0);
+  // Функция для генерации случайного номера заказа
+  const generateOrderNumber = () => {
+    return Math.floor(100000 + Math.random() * 900000);
   };
 
-      
-        const handleButtonClick = () => {
-          console.log("Кнопка нажата! Номер заказа:", orderNumber); // Логируем номер заказа при нажатии кнопки
-          if (typeof setIsBasketOpen === 'function') {
-            setIsBasketOpen(); // Закрываем корзину
-          } else {
-            console.error("setIsBasketOpen is not a function");
-          }
-        
-          navigate("/"); // Перенаправляем на главную страницу
-      
-        };
-      
-      
+  // Генерация номера заказа при монтировании компонента
+  useEffect(() => {
+    const newOrderNumber = generateOrderNumber();
+    setOrderNumber(newOrderNumber);
+    console.log("Номер заказа сгенерирован:", newOrderNumber);
+  }, []); // Пустой массив зависимостей, чтобы выполнить только один раз
+
+  // Функция для вычисления общей суммы заказа
+  const calculateTotalPrice = useSelector<RootState, number>((state) =>
+    state.basket.data.reduce((total, item) => total + item.price, 0)
+  );
+
+  const handleButtonClick = () => {
+    console.log("Кнопка нажата! Номер заказа:", orderNumber);
+    if (typeof setIsBasketOpen === "function") {
+      setIsBasketOpen(); // Закрываем корзину
+    }
+    // dispatch(delBasket(items.id)); // Очищаем корзину
+
+    navigate("/");
+  };
+
+  // Функция для вычисления общего количества товаров в заказе
+  const basketLengths = useSelector<RootState, number>(
+    (state) => state.basket.data.length
+  );
 
   return (
     <BasketBlockStyle>
@@ -59,19 +56,18 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
         <div className="basket">
           <div className="design">
             <h5>Оформление заказа</h5>
-            <p>Номер заказа: {orderNumber !== null ? orderNumber : '---'}</p> 
+            <p>Номер заказа: {orderNumber !== null ? orderNumber : "---"}</p>
           </div>
 
           <div className="sneaker">
             <div className="order">
-            <p>Товаров в заказе: {items.length}</p> {/* Отображение количества товаров */}
-
-            <p>Общая сумма заказа: {calculateTotalPrice()}₽</p> {/* Отображение общей суммы */}
-
+              <p>Товаров в корзине: {basketLengths}</p>
+              <p>Общая сумма заказа: {calculateTotalPrice}₽</p>{" "}
+              
               <p>Состав заказа</p>
             </div>
 
-            <BasketList items={items}  isBasketOpen />
+            <BasketList items={items} isBasketOpen />
           </div>
 
           <InfoStyle>
@@ -81,16 +77,17 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
                 title={""}
                 phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }}
                 backgroundColor="rgba(255, 255, 255, 1)"
-                input={{border:"",  backgroundColor:"rgba(246, 246, 246, 1)"}}
+                input={{
+                  border: "",
+                  backgroundColor: "rgba(246, 246, 246, 1)",
+                }}
                 showNameField={true}
                 buttonText="Оформить заказ"
-                onButtonClick={handleButtonClick} // Обработчик нажатия кнопки
-
+                onButtonClick={handleButtonClick}
               />
             </div>
           </InfoStyle>
         </div>
-        
       </div>
     </BasketBlockStyle>
   );
@@ -134,7 +131,7 @@ const BasketBlockStyle = styled.div`
     pading: 30px 30px;
   }
   .sneaker {
-  max-width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     border: 1px solid rgba(217, 217, 217, 1);
   }
@@ -160,13 +157,13 @@ const BasketBlockStyle = styled.div`
 `;
 
 const InfoStyle = styled.div`
-//   padding: 20px 20px;
-    // box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
+  //   padding: 20px 20px;
+  // box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
   max-width: 580px;
   background: rgba(255, 255, 255, 1);
 
   .form {
-max-width: 500px;
+    max-width: 500px;
     margin: 0 auto;
   }
 
@@ -186,3 +183,7 @@ max-width: 500px;
 `;
 
 export default Basket;
+function dispatch(arg0: any) {
+    throw new Error("Function not implemented.");
+}
+

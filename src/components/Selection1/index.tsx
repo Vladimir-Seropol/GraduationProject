@@ -1,7 +1,4 @@
-// import { useState } from "react";
-// import Cards from "../Cards";
-// import Search from "../Search";
-// import { useState } from "react";
+
 
 import { useContext } from "react";
 import { ThemeContext } from "../../App.tsx";
@@ -13,8 +10,7 @@ import 'swiper/swiper-bundle.css'; // Импортируйте стили Swiper
 // Import Swiper styles
 import "swiper/css";
 
-// import CardsSneaker from "../CardsSneaker";
-//import theme from "../../components/SwitchTheme";
+
 
 const SectionSelection = ({ onNext }: { onNext: () => void }) => {
   const { theme } = useContext(ThemeContext)!;
@@ -24,16 +20,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
       : { background: "rgba(255, 244, 238, 1)" };
 
 
-  // Состояние для чекбоксов
-  //   const [filters] = useState({
-  //     all: true,
-  //     completed: false,
-  //     incomplete: false,
-  //   });
-  // const handleFilterChange = () => {
-  // const newFilters = { all: false, completed: false, incomplete: false, [filter]: !filters[filter] };
-  // setFilters(newFilters);
-  //   const [filterValue, setFilterValue] = useState("");
+ 
   return (
     <section className={style.wrapper} id="selection">
       <div className={style.container} style={backgroundStyle}>
@@ -47,7 +34,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
        
             <div className={style.selection}>
               <div className={style.sneakers}>
-                <img src="  src/images/photo-sneaker.jpg" alt="" />
+                <img src="  src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -63,7 +50,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="src/images/photo-sneaker.jpg" alt="" />
+                <img src="src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -79,7 +66,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="src/images/photo-sneaker.jpg" alt="" />
+                <img src="src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -95,7 +82,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="  src/images/photo-sneaker.jpg" alt="" />
+                <img src="  src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -111,7 +98,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="src/images/photo-sneaker.jpg" alt="" />
+                <img src="src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -127,7 +114,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="src/images/photo-sneaker.jpg" alt="" />
+                <img src="src/images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>

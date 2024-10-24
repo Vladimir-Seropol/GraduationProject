@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Aicon from '../../assets/AIcon.svg';
+import Aicon from '../../assets/Vector+.svg';
 
 interface FAQItem {
     q: string;
@@ -19,7 +19,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ faqItem, onClick, 
         <li className="accordion-item">
             <button className="accordion-header" onClick={onClick}>
                 {faqItem.q}
-                <img className={`accordion-arrow ${isOpen ? "active" : ""}`} src={Aicon} alt="" />
+                <img className={`accordion-arrow ${isOpen ? "active" : ""}`} src={Aicon} alt="Accordion arrow" />
             </button>
             <div className="accordion-collapse" style={
                 isOpen ? { height: itemRef.current?.scrollHeight } : { height: "0px" }

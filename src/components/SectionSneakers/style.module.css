@@ -23,7 +23,6 @@ padding: 0 10px;
 @media screen and (max-width: 1265px) {
     .sneakers_block {
         grid-template-columns: 1fr;
-        gap: 150px;
     }
 
     

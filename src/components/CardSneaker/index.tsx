@@ -30,29 +30,26 @@ const CardSneaker: FC<Props> = ({ item, data }) => {
     >
       <div className={style.card}>
         <div className={style.product_block}>
-          <img src={data.imgUrl} alt="" />
+          <img src={data.imgUrl} alt="Sneaker" />
           <h2>{data.title}</h2>
           <p>{data.price} p</p>
           <div className={style.add_block}>
             <Link to={`/sneaker/${data.id}`}>
-              <img src="src/assets/View_product.png" alt="" />
+              <img src="src/assets/View_product.png" alt="View button" />
             </Link>
 
             <div className={isOpenModal ? "modal modal-open" : "modal"}>
-              {/* <div className="options"> */}
-                <button className="add" onClick={handleAddToBasket}>
-                  <img src="src/assets/Add_cart.png" alt="add to basket" />
-                </button>
-              {/* </div> */}
+                <div className="add" onClick={handleAddToBasket}>
+                  <img src="src/assets/Add_cart.png" alt="Add to basket" />
+                </div>
+             
               {isAdded && (
                 <span className={style.successMessage}>
                   Товар добавлен в корзину!
                 </span>
               )}
 
-              {/* <picture>
-                <img src={item.imgUrl} alt={item.title} />
-              </picture> */}
+             
             </div>
           </div>
         </div>
@@ -81,9 +78,10 @@ const CatalogCardStyle = styled.li<{ $isOpenModal: boolean }>`
     transition: all 200ms linear;
 
     .add button {
-      width: 80px;
-      height: 80px;
-      background-color: var(--text);
+    padding: 0 3.2px 0 0;
+      width: 60px;
+      height: 60px;
+    //   background-color: var(--text);
       border-radius: 50%;
 
       @media (min-width: 810px) {

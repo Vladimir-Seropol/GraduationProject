@@ -1,4 +1,4 @@
-import { FC, useContext, useRef } from "react";
+import { FC, useContext } from "react";
 import PriceFilter from "./PriceFilter";
 import GenderFilter from "./GenderFilter";
 import SizesFilter from "./SizesFilter";
@@ -76,7 +76,7 @@ const CatalogFilter: FC<IProps> = ({ setGender }) => {
       <SizesFilter setValue={setValue} />
       
       <div className={style.button_light}>
-        <ButtonDark text="Применить" type="submit" onClick={() => dispatch(getBaseLimit())} />;
+        <ButtonDark text="Применить" type="submit" onClick={() => dispatch(getBaseLimit())} />
               
         <ButtonLight text="Сбросить" onClick={handleReset} type="button" />
       </div>

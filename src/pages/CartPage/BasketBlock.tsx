@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 import BasketList from "./BasketList";
 import ButtonRed from "../../components/Buttons/ButtonRed/button.tsx";
 
+
 interface IProps {
   setIsBasketOpen: () => void;
+
 }
 
 const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
@@ -15,6 +17,8 @@ const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
     setIsBasketOpen(); // Закрываем корзину
     navigate("/basket"); // Переходим на страницу корзины
   };
+
+
 
   return (
     <BasketBlockStyle>
@@ -27,7 +31,7 @@ const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
           </InfoStyle>
         </div>
       </div>
-    </BasketBlockStyle>
+    </BasketBlockStyle> 
   );
 };
 

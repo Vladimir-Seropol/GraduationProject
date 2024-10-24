@@ -11,7 +11,7 @@ const CardTeam: FC<Props> = ({ data }) => {
   return (
     <div className={style.card}>
       <div>
-        <img src={data.imgUrl} alt="" />
+        <img src={data.imgUrl} alt="Sneaker" />
       </div>
       <div className={style.info}>
         <h2>{data.name}</h2>

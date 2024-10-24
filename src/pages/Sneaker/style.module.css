@@ -72,12 +72,12 @@ cursor: pointer;
 }
 
 .sizeButton:hover {
-background-color: #f0f0f0; /* Цвет при наведении */
+background-color: #f0f0f0; 
 }
 
 .selected {
-border-color: #ff0000; /* Цвет рамки для выбранного размера */
-background-color: #ffe6e6; /* Цвет фона для выбранного размера */
+border-color: #ff0000; 
+background-color: #ffe6e6; 
 }
 
 .price{
@@ -129,6 +129,7 @@ text-align: left;
 color: rgba(68, 75, 88, 1);
 margin-bottom: 24px;
 
+
 }
 
 .description p{
@@ -139,15 +140,21 @@ margin-bottom: 24px;
 .description{
     display: flex;
     gap: 100px;
+    padding: 0 20px;
 }
 
 .data p{
     margin-bottom: 13px;
 }
 @media screen and (max-width: 1000px) {
-    .item_wrapper {
+    .container {
       flex-direction: column;
       gap: 20px 0;
-      justify-items: center;
+     padding: 0 30px ;
+      align-items: center;
+    }
+    .description{
+        justify-content: space-around;
+        gap: 20px;
     }
 }

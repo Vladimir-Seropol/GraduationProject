@@ -104,12 +104,8 @@ button {
 
 .dark,
 .light {
-    padding: 0.5rem;
-    margin-right: 0.2rem;
     color: var(--text1);
     background: transparent;
-    border: 0.1rem solid transparent;
-    /* border-radius: 3rem; */
     transition:
         background 0.3s ease,
         color 0.3s ease;

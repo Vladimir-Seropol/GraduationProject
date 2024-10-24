@@ -96,6 +96,13 @@ const SneakerPage = () => {
                 <h3>Описание</h3>
                 <p>{sneakerData.description}</p>
               </div>
+              <div className={style.data}>
+                <h3>Характеристики</h3>
+                <p>Пол: {sneakerData.gender}</p>
+                <p>Цвет: {sneakerData.color}</p>
+                <p>Состав: {sneakerData.compound}</p>
+                <p>Страна: {sneakerData.country}</p>
+              </div>
             </div>
           </div>
         </div>

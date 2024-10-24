@@ -90,7 +90,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
             </div>
   <div className={style.selection}>
           <div className={style.sneakers}>
-            <img src="  src/images/Rectangle_45.png" alt="" />
+            <img src="  src/images/Rectangle_45.png" alt="Sneakers from AIR " />
 
             
           </div>
