@@ -1,5 +1,5 @@
 
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
@@ -84,11 +84,21 @@ const initialState: IState = {
   data: [], 
 };
 
+
+
 // Создаем срез состояния для корзины с помощью createSlice
 export const basketSlice = createSlice({
   name: "basket",
   initialState,   
-  reducers: {},   
+  reducers: {
+    addToBasket(state, action: PayloadAction<any>) {
+        state.data.push(action.payload);
+      },
+      clearBasket(state) {
+        state.data = []; // Очистка корзины
+      },
+
+  },   
   extraReducers: (builder) => { 
     // Обработка успешного выполнения fetchBasket
     builder.addCase(fetchBasket.fulfilled, (state, action) => {
@@ -106,6 +116,7 @@ export const basketSlice = createSlice({
     });
   },
 });
+export const  {addToBasket, clearBasket}  = basketSlice.actions;
 
 // Экспортируем редьюсер среза состояния по умолчанию
 export default basketSlice.reducer;

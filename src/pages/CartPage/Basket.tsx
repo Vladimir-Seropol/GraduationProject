@@ -3,9 +3,11 @@ import styled from "styled-components";
 import BasketList from "./BasketList";
 import Form from "../../components/Form/index.tsx";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
-import { delBasket, ISneakers } from "../../store/slices/basketSlice.ts";
+import { clearBasket, ISneakers } from "../../store/slices/basketSlice.ts";
+
+
 
 interface IProps {
   setIsBasketOpen: () => void;
@@ -16,6 +18,9 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
   const [orderNumber, setOrderNumber] = useState<number | null>(null); // Состояние для хранения номера заказа
   const items = useState<any[]>([]); // Состояние для хранения списка товаров
   const navigate = useNavigate(); // Инициализируем useNavigate
+  const dispatch = useDispatch(); // Инициализируем useDispatch
+
+
 
   // Функция для генерации случайного номера заказа
   const generateOrderNumber = () => {
@@ -39,7 +44,7 @@ const Basket: FC<IProps> = ({ setIsBasketOpen }) => {
     if (typeof setIsBasketOpen === "function") {
       setIsBasketOpen(); // Закрываем корзину
     }
-    // dispatch(delBasket(items.id)); // Очищаем корзину
+    dispatch(clearBasket()); // Очищаем корзину
 
     navigate("/");
   };
@@ -186,4 +191,8 @@ export default Basket;
 function dispatch(arg0: any) {
     throw new Error("Function not implemented.");
 }
+
+// function clearBasket(): any {
+//     throw new Error("Function not implemented.");
+// }
 
