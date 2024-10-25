@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { Sneaker } from "../../types/sneaker";
 import style from "./style.module.css";
 import ButtonRed from "../../components/Buttons/ButtonRed/button";
@@ -56,11 +56,16 @@ const SneakerPage = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className={style.absolute}>
+    
+        <div className={style.absolute}>
+            
       {sneakerData && (
         <div className={style.item_wrapper}>
+
           <div className={style.background}>
+               <Link to="/" ><p className={style.home}>Главная</p></Link>
             <div className={style.container}>
+             
               <img src={sneakerData.imgUrl} alt="" />
               <div className={style.info}>
                 <div className={style.article}>
@@ -108,6 +113,8 @@ const SneakerPage = () => {
         </div>
       )}
     </div>
+        
+    
   );
 };
 
