@@ -1,7 +1,7 @@
 import { FC } from "react";
 import style from "./style.module.css";
 import { Team } from "../../types/team.ts";
-// import { Link } from "react-router-dom";
+
 
 type Props = {
   data: Team;

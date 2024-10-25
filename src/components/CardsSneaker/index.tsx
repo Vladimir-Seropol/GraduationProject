@@ -1,7 +1,6 @@
 import style from './style.module.css';
 import CardSneaker from '../CardSneaker';
-import { FC, useEffect, useState } from 'react';
-import { Sneaker } from '../../types/sneaker';
+import { FC } from 'react';
 import ButtonRed from '../Buttons/ButtonRed/button';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
