@@ -75,7 +75,7 @@ h4 {
     font-family: var(--title-font);
     color: var(--text1);
 }
-
+h3,
 h4 {
     color: var(--text);
 }

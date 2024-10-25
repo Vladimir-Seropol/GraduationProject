@@ -5,15 +5,16 @@ import { IFormData } from "./index";
 
 interface IProps {
   setValue: UseFormSetValue<IFormData>;
-}
-
+    setFilterValue: React.Dispatch<React.SetStateAction<() => (sneakers: any[]) => any[]>>;
+    setGender: React.Dispatch<React.SetStateAction<string>>;
+  }
 const genders = [
   {
-    value: "мужской",
+    value: "Mужской",
     label: "male",
   },
   {
-    value: "женский",
+    value: "Женский",
     label: "female",
   },
 ];
@@ -26,7 +27,7 @@ const GenderFilter: FC<IProps> = ({ setValue }) => {
         {genders.map((gender) => (
           <div key={gender.label}>
             <input
-              type="checkbox"
+              type="radio"
               id={gender.label}
               name="gender"
               onChange={() => setValue("gender", gender.value)}

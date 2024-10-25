@@ -12,9 +12,9 @@ interface ButtonProps {
   };
   backgroundColor?: string;
   showNameField?: boolean;
-  buttonText?: string; // Новое свойство для текста кнопки
-  buttonStyle?: React.CSSProperties; // Новое свойство для стиля кнопки
-  onButtonClick: () => void; // Новый обработчик события для кнопки
+  buttonText?: string; // Текст кнопки
+  buttonStyle?: React.CSSProperties; // Стиль кнопки
+  onButtonClick: () => void; // Обработчик события для кнопки
 }
 
 const ContactForm: React.FC<ButtonProps> = ({
@@ -26,7 +26,7 @@ const ContactForm: React.FC<ButtonProps> = ({
   buttonText = "Отправить", // Значение по умолчанию
   buttonStyle, 
   onButtonClick,
-  input  // Обработчик события кнопки
+  input  
 }) => {
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -35,31 +35,32 @@ const ContactForm: React.FC<ButtonProps> = ({
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Пример простой валидации
-  if (!name || !phone || !email) {
-    alert("Пожалуйста, заполните все поля.");
-    return;
-  }
+    // Проверка на заполненность полей
+    if (!name || !phone || (showNameField && !email)) {
+      alert("Пожалуйста, заполните все поля.");
+      return;
+    }
 
-  // Проверка формата email
-  const emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
-  if (!emailPattern.test(email)) {
-    alert("Введите корректный email.");
-    return;
-  }
-
-
+    // Проверка формата email
+    const emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
+    if (showNameField && !emailPattern.test(email)) {
+      alert("Введите корректный email.");
+      return;
+    }
 
     console.log("Имя:", name);
     console.log("Телефон:", phone);
     console.log("Email:", email);
 
+    // Очищаем поля формы
     setName("");
     setPhone("");
     setEmail("");
 
+    // Вызываем обработчик нажатия кнопки
     if (onButtonClick) {
-      onButtonClick(); // Вызов обработчика, если он предоставлен
+      onButtonClick(); 
+      console.log("Кнопка нажата!"); // Сообщение в консоль
     }
   };
 
@@ -107,15 +108,15 @@ const ContactForm: React.FC<ButtonProps> = ({
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail"
                 style={{
-                    border: input.border,
-                    backgroundColor: input.backgroundColor,
-                  }}    
+                  border: input.border,
+                  backgroundColor: input.backgroundColor,
+                }}    
                 required
               />
             </label>
           </div>
         )}
-        <ButtonRed text={buttonText} style={buttonStyle} onClick={onButtonClick} />
+        <ButtonRed text={buttonText} style={buttonStyle} onClick={handleSubmit} />
       </div>
     </form>
   );

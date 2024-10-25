@@ -11,6 +11,7 @@ import { clearBasket, ISneakers } from "../../store/slices/basketSlice.ts";
 
 interface IProps {
   setIsBasketOpen: () => void;
+  isBasketOpen ?: boolean;
   item: ISneakers;
 }
 

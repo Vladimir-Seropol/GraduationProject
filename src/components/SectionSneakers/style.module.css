@@ -6,7 +6,7 @@ padding: 0 10px;
 }
 
 
-.container h1 {
+.container h2 {
     margin: 40px 0;
     color: var(--text);
    font-family: var(--logo-font);

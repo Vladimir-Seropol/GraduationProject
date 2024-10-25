@@ -8,9 +8,11 @@ const SectionForm = () => {
        <ContactForm title="Есть вопросы?" text="Заполните форму и наш менеджер свяжется с вами" phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }} input={{
                   border: "",
                   backgroundColor: ""
-              }} onButtonClick={function (): void {
-                  throw new Error("Function not implemented.");
-              } } />
+              }} 
+              onButtonClick={() => {
+                  console.log("Кнопка нажата!");
+              }}
+              />
 
            <div className={style.instagram}>
             <div className={style.logo}>

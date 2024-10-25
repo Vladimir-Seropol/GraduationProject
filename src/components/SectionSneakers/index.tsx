@@ -4,8 +4,10 @@ import style from "./style.module.css";
 import CardsSneaker from "../CardsSneaker";
 
 
+
+
 const SectionSneakers = () => {
-  const [filterFunction, setFilterFunction] = useState<() => (sneakers: any[]) => any[]>(() => (sneakers) => sneakers);
+  const [filterFunction, setFilterFunction] = useState<() => (sneakers: any[]) => any[]>(() => sneakers => sneakers);
   const [gender, setGender] = useState<string>("");
 
   return (
