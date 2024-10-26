@@ -116,7 +116,7 @@ const ContactForm: React.FC<ButtonProps> = ({
             </label>
           </div>
         )}
-        <ButtonRed text={buttonText} style={buttonStyle} onClick={handleSubmit} />
+        <ButtonRed  text={buttonText} style={buttonStyle} type="submit" />
       </div>
     </form>
   );

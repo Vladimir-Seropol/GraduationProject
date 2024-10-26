@@ -5,19 +5,18 @@ import Form from "../../components/Form/index.tsx";
 import { Link, useNavigate } from "react-router-dom";
 import {useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store.ts";
-import { clearBasket, ISneakers } from "../../store/slices/basketSlice.ts";
-
-
+import { clearBasket } from "../../store/slices/basketSlice.ts";
+import { ISneakers } from "../../store/types.ts";
 
 interface IProps {
   setIsBasketOpen: () => void;
   isBasketOpen ?: boolean;
-  item: ISneakers;
+  items: ISneakers[];
 }
 
 const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
   const [orderNumber, setOrderNumber] = useState<number | null>(null); // Состояние для хранения номера заказа
-  const items = useState<any[]>([]); // Состояние для хранения списка товаров
+  const  [items] = useState<ISneakers[]>([]); // Состояние для хранения списка товаров
   const navigate = useNavigate(); // Инициализируем useNavigate
   const dispatch = useDispatch(); // Инициализируем useDispatch
   const [isOpen, setIsOpen] = useState(isBasketOpen);
@@ -43,7 +42,8 @@ const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
 
   // Функция для вычисления общей суммы заказа
   const calculateTotalPrice = useSelector<RootState, number>((state) =>
-    state.basket.data.reduce((total, item) => total + item.price, 0)
+    state.basket.data.reduce((total, item) => total + (item.price ?? 0), 0)
+
   );
 
   const handleButtonClick = () => {
@@ -61,7 +61,7 @@ const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
     (state) => state.basket.data.length
   );
 
-  const arrowStyle = {
+  const arrowStyle: React.CSSProperties = {
     position: 'relative',  
     left: '8px', 
     top: '4px',

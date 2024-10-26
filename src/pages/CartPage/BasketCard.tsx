@@ -1,8 +1,9 @@
 import { FC } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { delBasket, ISneakers } from "../../store/slices/basketSlice";
+import { delBasket } from "../../store/slices/basketSlice";
 import { AppDispatch } from "../../store/store";
+import { ISneakers } from "../../store/types";
 
 interface IProps {
   isPage?: boolean;

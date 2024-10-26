@@ -3,18 +3,22 @@ import style from "./style.module.css";
 
 interface ButtonProps {
     text: string;
-    onClick: (event: React.FormEvent<HTMLFormElement>) => void;
+    type: "button" | "submit" | "reset";
+    onClick?: React.MouseEventHandler<HTMLButtonElement> | React.FormEventHandler<HTMLButtonElement>;
+    children?: React.ReactNode;
     disabled?: boolean;
-    type?: "button" | "submit" | "reset";
     style?: React.CSSProperties;
-   
-      
-   
+    
 }
 
-const ButtonRed: React.FC<ButtonProps> = ({ text, onClick, disabled = false, type = "button" }) => {
+const ButtonRed: React.FC<ButtonProps> = ({ text, onClick,  disabled = false, type }) => {
     return (
-        <button className={style.button} onClick={onClick} disabled={disabled} type={type}>
+        <button 
+            className={style.button} 
+            onClick={onClick} 
+            disabled={disabled} 
+            type={type}
+        >
             {text}
         </button>
     );

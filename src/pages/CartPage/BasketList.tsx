@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 import { ISneakers } from "../../store/types";
 import { RootState } from "../../store/store";
 
+
 interface IProps {
   page?: boolean;
   isBasketOpen?: boolean;
+  items: ISneakers[]
 }
 
 const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {

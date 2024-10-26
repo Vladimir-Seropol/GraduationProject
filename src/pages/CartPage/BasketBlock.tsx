@@ -7,7 +7,6 @@ import ButtonRed from "../../components/Buttons/ButtonRed/button.tsx";
 
 interface IProps {
   setIsBasketOpen: () => void;
-
 }
 
 const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
@@ -25,7 +24,7 @@ const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
       <div className="container">
         <div className="back" onClick={setIsBasketOpen}></div>
         <div className="basket">
-          <BasketList isBasketOpen />
+          <BasketList isBasketOpen items={[]} />
           <InfoStyle>
             <ButtonRed type="button" onClick={handleGoToBasket} text={"Перейти в корзину"} />
           </InfoStyle>

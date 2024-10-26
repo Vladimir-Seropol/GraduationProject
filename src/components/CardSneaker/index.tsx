@@ -4,8 +4,10 @@ import styled from "styled-components";
 import { Sneaker } from "../../types/sneaker";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { ISneakers, postBasket } from "../../store/slices/basketSlice";
+import {  postBasket } from "../../store/slices/basketSlice";
 import { AppDispatch } from "../../store/store";
+import { ISneakers } from "../../store/types";
+
 
 type Props = {
   data: Sneaker;

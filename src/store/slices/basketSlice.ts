@@ -1,27 +1,8 @@
 
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import {ISneakers} from "../types";
 import axios from "axios";
 
-// Определяем интерфейс ISneakers для типизации данных кроссовок
-export interface ISneakers {
-  color?: string;        
-  compound?: string;     
-  country?: string;      
-  description?: string;  
-  gender?: string;       
-  id: number;           
-  imgUrl?: string;       
-  inStock?: number;      
-  oldPrice?: number;     
-  price?: number;        
-  sizes?: number[];      
-  stars?: number;        
-  title?: string;        
-  vendorСode?: string;  
-  selectedSize?: number; 
-  
-}
 
 // Определяем базовый URL для API
 const BASE_URL: string = "https://01d736031dee7633.mokky.dev";
