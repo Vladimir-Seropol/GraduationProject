@@ -37,12 +37,12 @@ const CardSneaker: FC<Props> = ({ item, data }) => {
           <p>{data.price} p</p>
           <div className={style.add_block}>
             <Link to={`/sneaker/${data.id}`}>
-              <img src="src/assets/View_product.png" alt="View button" />
+              <img src="./src/assets/View_product.png" alt="View button" />
             </Link>
 
             <div className={isOpenModal ? "modal modal-open" : "modal"}>
                 <div className="add" onClick={handleAddToBasket}>
-                  <img src="src/assets/Add_cart.png" alt="Add to basket" />
+                  <img src="./src/assets/Add_cart.png" alt="Add to basket" />
                 </div>
              
               {isAdded && (

@@ -77,7 +77,7 @@ const SneakerPage = () => {
                   <span className={style.article}>В наличии: {sneakerData.inStock} шт</span>
                 </div>
                 <h2 className={style.title}>{sneakerData.title}</h2>
-                <img src="/src/assets/stars.png" alt="" className={style.stars} />
+                <img src="./src/assets/stars.png" alt="" className={style.stars} />
                 <p className={style.size}>Выберите размер:</p>
                 <div className={style.sizeOptions}>
                   {sneakerData.sizes && Array.isArray(sneakerData.sizes) && sneakerData.sizes.map((size) => (
@@ -97,9 +97,9 @@ const SneakerPage = () => {
                 <div className={style.button}>
                   <ButtonRed text="Заказать" onClick={handleAddToBasket} type={"button"} />
                 </div>
-                <p className={style.text}><img src="/src/assets/Vector.svg" alt="" style={{ width: "15px", marginRight: "5px" }} />Бесплатная доставка до двери</p>
-                <p className={style.text}><img src="/src/assets/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Оплата заказа при получении</p>
-                <p className={style.text}><img src="/src/assets/Vector.svg" alt="" style={{ width: "15px", marginRight: "5px" }} />Обмен в течение двух недель</p>
+                <p className={style.text}><img src="./src/assets/Vector.svg" alt="" style={{ width: "15px", marginRight: "5px" }} />Бесплатная доставка до двери</p>
+                <p className={style.text}><img src="./src/assets/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Оплата заказа при получении</p>
+                <p className={style.text}><img src="./src/assets/Vector.svg" alt="" style={{ width: "15px", marginRight: "5px" }} />Обмен в течение двух недель</p>
               </div>
             </div>
             <div className={style.description}>

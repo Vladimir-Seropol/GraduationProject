@@ -8,7 +8,7 @@ const SectionAbout = () => {
     <section id="about_us">
       <div className="wrapper">
         <div className={style.imeges}>
-          <img src="src/images/figure.png" alt="Figure" />
+          <img src="./src/images/figure.png" alt="Figure" />
         </div>
 
         <div className={style.container}>
@@ -20,12 +20,12 @@ const SectionAbout = () => {
               историй спортсменов. Чтобы помочь тебе подняться и двигаться вперед.{" "}
             </p>
             <span className={style.span}>
-              <img src="src/images/Line_6.png" alt="Line" />
+              <img src="./src/images/Line_6.png" alt="Line" />
               SneakMax
             </span>
           </div>
 
-          <img src="src/images/Mask_Group.png" alt="Sneakers on feet" />
+          <img src="./src/images/Mask_Group.png" alt="Sneakers on feet" />
         </div>
       </div>
     </section>
