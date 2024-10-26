@@ -3,10 +3,13 @@ import style from "./style.module.css";
 
 interface ButtonProps {
     text: string;
-    onClick: () => void;
+    onClick: (event: React.FormEvent<HTMLFormElement>) => void;
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
     style?: React.CSSProperties;
+   
+      
+   
 }
 
 const ButtonRed: React.FC<ButtonProps> = ({ text, onClick, disabled = false, type = "button" }) => {

@@ -10,7 +10,7 @@ interface IProps {
 }
 
 const SizesFilter: FC<IProps> = ({ setValue }) => {
-  const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
+  const [, setSelectedSizes] = useState<number[]>([]);
 
   const handleSizeChange = (size: number) => {
     

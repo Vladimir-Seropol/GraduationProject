@@ -1,10 +1,7 @@
 import { useState } from "react";
-// import Cards from "../Cards";
-// import Search from "../Search";
 import style from "./style.module.css";
-// import CardsSneaker from "../CardsSneaker";
 import CardsTeam from "../CardsTeam";
-//import theme from "../../components/SwitchTheme";
+
 
 const SectionTeams = () => {
   const [filterValue] = useState("");

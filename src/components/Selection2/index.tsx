@@ -1,15 +1,11 @@
-// import { useState } from "react";
-// import Cards from "../Cards";
-// import Search from "../Search";
-// import { useState } from "react";
+
 
 import { useContext } from "react";
 import { ThemeContext } from "../../App.tsx";
 import ButtonLght from "../Buttons/ButtonLight/button.tsx";
 import style from "./style.module.css";
 
-// import CardsSneaker from "../CardsSneaker";
-//import theme from "../../components/SwitchTheme";
+
 
 const SectionSelection = ({ onNext }: { onNext: () => void }) => {
   const { theme } = useContext(ThemeContext)!;
@@ -18,16 +14,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
       ? { background: "none" }
       : { background: "rgba(255, 244, 238, 1)" };
 
-  // Состояние для чекбоксов
-  //   const [filters] = useState({
-  //     all: true,
-  //     completed: false,
-  //     incomplete: false,
-  //   });
-  // const handleFilterChange = () => {
-  // const newFilters = { all: false, completed: false, incomplete: false, [filter]: !filters[filter] };
-  // setFilters(newFilters);
-  //   const [filterValue, setFilterValue] = useState("");
+ 
   return (
     <section className={style.wrapper} id="selection">
       <div className={style.container} style={backgroundStyle}>
@@ -45,7 +32,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                 <input
                   className={style.check_input}
                   type="checkbox"
-                  //    onChange={() => handleFilterChange()}
                 />
                 <span className={style.check_style}></span>
                 менее 36
@@ -54,7 +40,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                 <input
                   className={style.check_input}
                   type="checkbox"
-                  //    onChange={() => handleFilterChange()}
                 />
                 <span className={style.check_style}></span>
                 36-38
@@ -63,7 +48,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                 <input
                   className={style.check_input}
                   type="checkbox"
-                  //    onChange={() => handleFilterChange()}
                 />
                 <span className={style.check_style}></span>
                 39-41
@@ -72,7 +56,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                 <input
                   className={style.check_input}
                   type="checkbox"
-                  //    onChange={() => handleFilterChange()}
                 />
                 <span className={style.check_style}></span>
                 42-44
@@ -81,7 +64,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                 <input
                   className={style.check_input}
                   type="checkbox"
-                  //    onChange={() => handleFilterChange()}
                 />
                 <span className={style.check_style}></span>
                 45 и больше

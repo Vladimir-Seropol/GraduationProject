@@ -15,7 +15,6 @@ const BasketList: FC<IProps> = ({ page, isBasketOpen }) => {
   const items = useSelector<RootState, ISneakers[]>((state) => state.basket.data);
   console.log(items);
    
-
     return (
         <BasketListStyle $page={page} $isBasketOpen={isBasketOpen}>
           {items.map((item) => (

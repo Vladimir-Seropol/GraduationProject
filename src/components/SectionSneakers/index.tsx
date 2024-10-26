@@ -7,7 +7,7 @@ import CardsSneaker from "../CardsSneaker";
 
 
 const SectionSneakers = () => {
-  const [filterFunction, setFilterFunction] = useState<() => (sneakers: any[]) => any[]>(() => sneakers => sneakers);
+  const [, setFilterFunction] = useState<() => (sneakers: any[]) => any[]>(() => sneakers => sneakers);
   const [gender, setGender] = useState<string>("");
 
   return (

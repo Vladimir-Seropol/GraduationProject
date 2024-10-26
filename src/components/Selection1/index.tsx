@@ -5,9 +5,6 @@ import { ThemeContext } from "../../App.tsx";
 import ButtonLght from "../Buttons/ButtonLight/button.tsx";
 import style from "./style.module.css";
 import 'swiper/swiper-bundle.css'; // Импортируйте стили Swiper
-
-
-// Import Swiper styles
 import "swiper/css";
 
 
@@ -41,7 +38,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды
@@ -57,7 +53,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды
@@ -73,7 +68,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды
@@ -89,7 +83,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды
@@ -105,7 +98,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды
@@ -121,7 +113,6 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
                     <input
                       className={style.check_input}
                       type="checkbox"
-                    //    onChange={() => handleFilterChange()}
                     />
                     <span className={style.check_style}></span>
                     кеды

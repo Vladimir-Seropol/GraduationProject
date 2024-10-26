@@ -4,7 +4,8 @@ import style from "./style.module.css";
 import { ThemeContext } from "../../App";
 
 const SectionContacts = () => {
-  const { theme } = useContext(ThemeContext);
+    const context = useContext(ThemeContext);
+    const theme = context?.theme;
   const backgroundStyle =
     theme === "dark"
       ? { background: "none" }

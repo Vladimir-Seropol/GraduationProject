@@ -1,15 +1,11 @@
-// import { useState } from "react";
-// import Cards from "../Cards";
-// import Search from "../Search";
-// import { useState } from "react";
+
 
 import { useContext } from "react";
 import { ThemeContext } from "../../App.tsx";
 import ButtonLght from "../Buttons/ButtonLight/button.tsx";
 import style from "./style.module.css";
 
-// import CardsSneaker from "../CardsSneaker";
-//import theme from "../../components/SwitchTheme";
+
 
 
 const SectionSelection = ({ onNext }: { onNext: () => void }) => {

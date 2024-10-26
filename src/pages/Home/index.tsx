@@ -5,7 +5,7 @@ import SectionQuestions from "../../components/SectionQuestions";
 import SectionSelection from "../../components/SectionSelection";
 import SectionSneakers from "../../components/SectionSneakers";
 import SectionTeam from "../../components/SectionTeam";
-// import style from "./style.module.css";
+
 
 
 
