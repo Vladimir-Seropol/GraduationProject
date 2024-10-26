@@ -80,8 +80,9 @@ const SneakerPage = () => {
                 <img src="/src/assets/stars.png" alt="" className={style.stars} />
                 <p className={style.size}>Выберите размер:</p>
                 <div className={style.sizeOptions}>
-                  {sneakerData.sizes.map((size) => (
-                    <button
+                  {sneakerData.sizes && Array.isArray(sneakerData.sizes) && sneakerData.sizes.map((size) => (
+  <button
+
                       key={size}
                       className={`${style.sizeButton} ${selectedSize === size ? style.selected : ''}`}
                       onClick={() => handleSizeSelect(size)}
@@ -89,6 +90,7 @@ const SneakerPage = () => {
                       <p>{size}</p>
                     </button>
                   ))}
+
                 </div>
                 <span className={style.price}>{sneakerData.price}</span>
                 <span className={style.priceold}>{sneakerData.oldPrice}</span>
