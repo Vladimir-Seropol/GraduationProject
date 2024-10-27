@@ -13,9 +13,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "sneaker/:id", element: <SneakerPage /> },
-			{ path: "basket", element: <Basket setIsBasketOpen={function (): void {
-                throw new Error("Function not implemented.");
-            } } items={[]}  /> },
+			{ path: "basket", element: <Basket />  },
 			{ path: "*", element: <NotFound /> }
 		]
 	}

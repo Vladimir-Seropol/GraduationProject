@@ -9,9 +9,9 @@ import { clearBasket } from "../../store/slices/basketSlice.ts";
 import { ISneakers } from "../../store/types.ts";
 
 interface IProps {
-  setIsBasketOpen: () => void;
+  setIsBasketOpen?: () => void;
   isBasketOpen ?: boolean;
-  items: ISneakers[];
+  items?: ISneakers[];
 }
 
 const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
@@ -119,6 +119,7 @@ const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
           <InfoStyle>
             <div className="form">
               <Form
+              
                 text={""}
                 title={""}
                 phoneInputProps={{ type: "tel", placeholder: "Номер телефона" }}

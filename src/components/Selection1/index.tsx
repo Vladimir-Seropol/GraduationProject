@@ -31,7 +31,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
        
             <div className={style.selection}>
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -46,7 +46,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -61,7 +61,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -76,7 +76,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -91,7 +91,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -106,7 +106,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./src/images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>

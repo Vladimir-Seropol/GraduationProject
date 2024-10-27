@@ -20,7 +20,7 @@ const SectionContacts = () => {
           <div className={style.contact}>
             <h3>Главный офис </h3>
             <div className={style.tooltip}>
-              <img src="./src/assets/Tooltip.png" alt="Tooltip" />
+              <img src="./assets/Tooltip.png" alt="Tooltip" />
             </div>
             <p>
               <a href="tel:+78007898989">+7 800 789 89 89</a>
@@ -36,8 +36,8 @@ const SectionContacts = () => {
               г. Санкт-Петербург, Комсомольская, 43 к1
             </p>
             <div className={style.social_media}>
-              <img src="./src/assets/VK.svg" alt="icon VK" />
-              <img src="./src/assets/Instagram.svg" alt="icon Instagram" />
+              <img src="./assets/VK.svg" alt="icon VK" />
+              <img src="./assets/Instagram.svg" alt="icon Instagram" />
             </div>
           </div>
 
