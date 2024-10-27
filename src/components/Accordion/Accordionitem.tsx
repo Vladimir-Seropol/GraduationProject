@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Aicon from '../../assets/Vector+.svg';
+import Aicon from '../../../public/icons/Vector+.svg';
 
 interface FAQItem {
     q: string;

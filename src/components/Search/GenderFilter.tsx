@@ -77,7 +77,7 @@ const GenderFilterStyle = styled.div`
     }
 
     input:checked + label::before {
-      background: url("src/images/Vector.png") no-repeat center;
+      background: url("../../../public/images/Vector.png") no-repeat center;
     }
   }
  

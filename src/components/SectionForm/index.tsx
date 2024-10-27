@@ -16,14 +16,14 @@ const SectionForm = () => {
 
            <div className={style.instagram}>
             <div className={style.logo}>
-                <img src="./images/instagram_logo.png" alt="" />
+                <img src="/images/instagram_logo.png" alt="" />
             </div>
             <div className={style.foto}>
-                <img src="./images/Rectangle_1.png" alt="picture from Instagram" />
-                <img src="./images/Rectangle_3.png" alt="picture from Instagram" />
-                <img src="./images/Rectangle_4.png" alt="picture from Instagram" />
-                <img src="./images/Rectangle_2.png" alt="picture from Instagram" />
-                <img src="./images/Rectangle_5.png" alt="picture from Instagram" />
+                <img src="/images/Rectangle_1.png" alt="picture from Instagram" />
+                <img src="/images/Rectangle_3.png" alt="picture from Instagram" />
+                <img src="/images/Rectangle_4.png" alt="picture from Instagram" />
+                <img src="/images/Rectangle_2.png" alt="picture from Instagram" />
+                <img src="/images/Rectangle_5.png" alt="picture from Instagram" />
 
             </div>
             

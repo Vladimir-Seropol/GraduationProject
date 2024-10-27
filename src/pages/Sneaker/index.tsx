@@ -97,9 +97,9 @@ const SneakerPage = () => {
                 <div className={style.button}>
                   <ButtonRed text="Заказать" onClick={handleAddToBasket} type={"button"} />
                 </div>
-                <p className={style.text}><img src="./images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Бесплатная доставка до двери</p>
-                <p className={style.text}><img src="./images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Оплата заказа при получении</p>
-                <p className={style.text}><img src="./images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Обмен в течение двух недель</p>
+                <p className={style.text}><img src="/images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Бесплатная доставка до двери</p>
+                <p className={style.text}><img src="/images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Оплата заказа при получении</p>
+                <p className={style.text}><img src="/images/Vector.png" alt="" style={{ width: "15px", marginRight: "5px" }} />Обмен в течение двух недель</p>
               </div>
             </div>
             <div className={style.description}>

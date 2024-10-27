@@ -1,6 +1,6 @@
 
 import style from "./style.module.css";
-import MaskGroup from "../../images/Mask_Group.png";
+
 
 const SectionAbout = () => {
   
@@ -8,7 +8,7 @@ const SectionAbout = () => {
     <section id="about_us">
       <div className="wrapper">
         <div className={style.imeges}>
-          <img src="../src/images/figure.png" alt="Figure" />
+          <img src="/images/figure.png" alt="Figure" />
         </div>
 
         <div className={style.container}>
@@ -20,12 +20,12 @@ const SectionAbout = () => {
               историй спортсменов. Чтобы помочь тебе подняться и двигаться вперед.{" "}
             </p>
             <span className={style.span}>
-              <img src="../../images/Line_6.png" alt="Line" />
+              <img src="/images/Line_6.png" alt="Line" />
               SneakMax
             </span>
           </div>
 
-          <img src={MaskGroup} alt="Feet with wearing sneakers" />
+          <img src="/images/Mask_Group.png" alt="Feet with wearing sneakers" />
         </div>
       </div>
     </section>

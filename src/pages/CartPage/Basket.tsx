@@ -95,7 +95,7 @@ const Basket: FC<IProps> = ({ setIsBasketOpen, isBasketOpen }) => {
             <p onClick={toggleBasket} style={{ cursor: 'pointer', fontWeight: 'bold' }}>
     Состав заказа 
     <img 
-      src="src/assets/down-arrow.svg" 
+      src="/icons/down-arrow.svg" 
       alt={isOpen ? "Скрыть состав заказа" : "Показать состав заказа"} 
       style={{ ...arrowStyle, transform: isOpen ? 'none' : 'rotate(180deg)' }} 
     />
