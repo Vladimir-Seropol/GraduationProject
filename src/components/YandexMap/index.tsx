@@ -3,7 +3,7 @@ import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
 const YandexMap: React.FC = () => {
   const mapState = {
-    center: [59.83, 30.14], // Координаты центра карты
+    center: [59.8304, 30.1421], // Координаты центра карты
     zoom: 10, // Уровень увеличения
   };
 

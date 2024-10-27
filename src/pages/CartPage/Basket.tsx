@@ -173,6 +173,7 @@ const BasketBlockStyle = styled.div`
     padding: 30px 0 17px 30px;
   }
   p {
+  padding-left: 10px;
     font-family: Intro Book;
     font-size: 14px;
     font-weight: 400;
@@ -197,12 +198,17 @@ const BasketBlockStyle = styled.div`
   .basket {
     position: relative;
     z-index: 5;
-    top: -55vh;
+    top: -450px;
     
     background: rgba(255, 255, 255, 1);
     min-width: 580px;
-    // max-height: 100vh;
   }
+
+  @media (max-width: 600px) {
+        .basket{
+        min-width: 100%;
+        }
+    }
 `;
 
 const InfoStyle = styled.div`
@@ -228,6 +234,7 @@ const InfoStyle = styled.div`
     font-weight: 700;
     line-height: 20px;
   }
+    
 `;
 
 export default Basket;

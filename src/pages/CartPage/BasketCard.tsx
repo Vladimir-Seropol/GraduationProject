@@ -36,7 +36,7 @@ const BasketCardStyle = styled.li<{ $isPage: boolean | undefined }>`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 10px;
+  gap: 40px;
   margin-bottom: ${(props) => (props.$isPage ? "15px" : "25px")};
   ${(props) => props.$isPage && "padding: 15px 0;"}
 

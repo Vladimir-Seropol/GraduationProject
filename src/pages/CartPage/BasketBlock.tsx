@@ -26,7 +26,10 @@ const BasketBlock: FC<IProps> = ({ setIsBasketOpen }) => {
         <div className="basket">
           <BasketList isBasketOpen items={[]} />
           <InfoStyle>
-            <ButtonRed type="button" onClick={handleGoToBasket} text={"Перейти в корзину"} />
+            <div className="button">
+                 <ButtonRed type="button" onClick={handleGoToBasket} text={"Перейти в корзину"} />
+            </div>
+           
           </InfoStyle>
         </div>
       </div>
@@ -60,10 +63,11 @@ const BasketBlockStyle = styled.div`
     position: absolute;
     z-index: 5;
     right: 20px;
-    top: 0;
+    right: 10px;
+    // left: 0;
     box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
     background: rgb(255, 255, 255);
-    min-width: 480px;
+    min-width: 320px;
     padding-top: 10px;
     max-height: 520px;
   }
@@ -75,6 +79,7 @@ const InfoStyle = styled.div`
   padding: 20px 20px 13px;
   box-shadow: 0px -4px 10px 0px rgba(0, 13, 84, 0.1);
   background: rgb(255, 255, 255);
+
 
   h5 {
     color: rgb(77, 77, 77);
@@ -88,6 +93,12 @@ const InfoStyle = styled.div`
     font-size: 20px;
     font-weight: 700;
     line-height: 20px;
+  }
+
+  @media (max-width: 400px) {
+    .button {
+  margin: 0 auto;
+  }
   }
 `;
 
