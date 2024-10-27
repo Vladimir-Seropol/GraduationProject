@@ -2,6 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 import { UseFormSetValue } from "react-hook-form";
 import { IFormData } from "./index";
+import  Vector  from "../../../public/images/Vector.png";
 
 interface IProps {
   setValue: UseFormSetValue<IFormData>;
@@ -77,7 +78,12 @@ const GenderFilterStyle = styled.div`
     }
 
     input:checked + label::before {
-      background: url("../../../public/images/Vector.png") no-repeat center;
+    
+    background-image: url(${Vector}); /* Установите изображение фона */
+    background-repeat: no-repeat; /* Запретить повторение изображения */
+    background-position: center; /* Центрировать изображение */
+    content: ''; /* Обязательно для псевдоэлемента */
+
     }
   }
  
