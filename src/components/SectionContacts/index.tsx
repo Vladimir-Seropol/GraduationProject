@@ -36,8 +36,12 @@ const SectionContacts = () => {
               г. Санкт-Петербург, Комсомольская, 43 к1
             </p>
             <div className={style.social_media}>
-              <img src="/icons/VK.svg" alt="icon VK" />
-              <img src="/icons/Instagram.svg" alt="icon Instagram" />
+            <a href="https://vk.com" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/VK.svg" alt="icon VK" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="/icons/Instagram.svg" alt="icon Instagram" />
+            </a>
             </div>
           </div>
 
