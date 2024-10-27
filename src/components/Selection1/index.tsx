@@ -106,7 +106,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
               </div>
 
               <div className={style.sneakers}>
-                <img src="./images/photo-sneaker.jpg" alt="Sneaker" />
+                <img src="../../images/photo-sneaker.jpg" alt="Sneaker" />
 
                 <div className={style.inputs}>
                   <label>
@@ -125,7 +125,7 @@ const SectionSelection = ({ onNext }: { onNext: () => void }) => {
             <span className={style.counter}>1 из 3</span>
             <ButtonLght
               text="Следующий шаг"
-              onClick={onNext} // Используем переданную функцию
+              onClick={onNext} 
             />
           </div>
         </div>

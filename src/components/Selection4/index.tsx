@@ -55,6 +55,7 @@ const SectionSelection: React.FC<Selection4Props> = ({ onButtonClick }) => {
                                 backgroundColor: ""
                             }}
                             onButtonClick={handleButtonClick}
+                            
                         />
                     </div>
                 </div>
