@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import {  postBasket } from "../../store/slices/basketSlice";
 import { AppDispatch } from "../../store/store";
 import { ISneakers } from "../../store/types";
-// import { IState } from "../../images/Group_44.png";
 
 type Props = {
   data: Sneaker;
